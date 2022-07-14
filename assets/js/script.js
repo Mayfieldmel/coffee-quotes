@@ -44,3 +44,12 @@ var newUrl = apiUrlquote.toString();
 
 
   //display author & content values in "quote-author" & "quote-content"
+  var addAuthor = function() {
+    var authorSpace = document.querySelector("#quote-author");
+    var selectedAuthor = document.author.
+    selectedAuthor.textContent = document.author.value;
+    
+
+
+  }
+  
