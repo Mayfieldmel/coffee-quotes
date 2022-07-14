@@ -62,6 +62,17 @@ form {
 	border: solid 3px var(--primary);
 	background-color: var(--primary);
 	border-radius: var(--border-radius);
+ 
+}
+
+.select {
+ position: relative;
+ left: 50px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .option-head {
@@ -81,7 +92,7 @@ form {
 
 .submit-button {
 	position: relative;
-	right: 15%;
+	left: 60%;
 }
 
 .form {

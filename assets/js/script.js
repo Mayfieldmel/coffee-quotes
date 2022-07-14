@@ -17,3 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // var foodtype = 
+
+    // var getCityData = function(lat, long) {
+    //     var apiUrl = "https://foodish-api.herokuapp.com/images/" + foodtype;
+    //     fetch(apiUrl).then(function(response) {
+    //         if(response.ok) {
+    //             response.json().then(function(data){
+    //                 console.log(data);
+    //                 displayCityData(data, cityName);
+    //             });
+    //         } else {
+    //             alert('Error: ' + response.statusText);
+    //           }
+    //         })
+    //         .catch(function (error) {
+    //           alert('Unable to connect to openweathermap.org');
+    //         });
+    //     };
