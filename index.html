@@ -22,16 +22,16 @@
                 <h3>Feeling hungry?</h3>
                 <!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
                 <div class="input-field col s12">
-                    <select>
+                    <select id="quote-type">
                         <option value="" disabled selected>Pick a quote topic</option>
-                        <option value="1">Anxiety</option>
-                        <option value="2">Choice</option>
-                        <option value="3">Dreams</option>
-                        <option value="4">Future</option>
-                        <option value="5">Inspiration</option>
-                        <option value="6">Love</option>
-                        <option value="7">Pain</option>
-                        <option value="8">Time</option>
+                        <option value="1" id="pain">Pain</option>
+                        <option value="2" id="wisdom">Wisdom</option>
+                        <option value="3" id="success">Success</option>
+                        <option value="4" id="happiness">Happiness</option>
+                        <option value="5" id="inspiration">Inspiration</option>
+                        <option value="6" id="life">Life</option>
+                        <option value="7" id="humor">Humor</option>
+                        <option value="8" id="love">Love</option>
                     </select>
                 </div>
                 <div class="input-field col s12 m6">
@@ -58,10 +58,10 @@
                   <div class="card">
                     <div class="card-image">
                       <img src="images/sample-1.jpg">
-                      <span class="card-title">Quote Author</span>
+                      <span class="card-title" id="quote-author">Quote Author</span>
                     </div>
                     <div class="card-content">
-                      <p>Quote</p>
+                      <p id="quote-content">Quote</p>
                     </div>
                   </div>
                 </div>
