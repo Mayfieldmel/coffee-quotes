@@ -23,7 +23,7 @@
 	</head>
 	<body>
 		<!-- materialize recommended enclosing all page content in a container div -->
-		<div class="container col s12">
+		<!-- MEDIA QUERY - get rid of <div class="container col s12"> -->
 			<header class="col s12">
 				<div class="main-title">
 					<span class="icon-box">
@@ -39,12 +39,13 @@
 				</div>
 				<h2 class="subtitle">"Feed your brain with every meal!"</h2>
 			</header>
-			<main class="col s12">
+			<main class="container col s12"> <!-- MEDIA QUERY - add container->
 				<!-- form start -->
-				<form class="form">
+				<form class="form row"> <!-- MEDIA QUERY - add row-->
 					<h3 class="main-title">What sounds good?</h3>
 					<!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
-					<div class="input-field col s12">
+					<div class="flex-column"> <!-- MEDIA QUERY - add flex-box-->
+					<div class="input-field col s4">
 						<select>
 							<option class="option-head" value="" disabled selected>
 								Topic Menu: Choose One!
@@ -59,23 +60,17 @@
 							<option class="options" value="8">Time</option>
 						</select>
 					</div>
-					<div class="input-field col s12 m6">
+					<div class="input-field col s4">
 						<select class="icons">
 							<option class="option-head" value="" disabled selected>
-								Food Menu: Choose One!
-							</option>
-							<option class="options" value="pizza" data-icon="">Pizza</option>
-							<option class="options" value="desert" data-icon="">
-								Desert
-							</option>
-							<option class="options" value="pasta" data-icon="">Pasta</option>
-							<option class="options" value="burger" data-icon="">
-								Burger
-							</option>
-							<option class="options" value="butter-chicken" data-icon="">
-								Chicken
-							</option>
-							<option class="options" value="rice" data-icon="">Rice</option>
+                                Food Menu: Choose One!
+                            </option>
+                            <option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
+                            <option value="desert" data-icon="./assets/images/desert-icon.jpg">Desert</option>
+                            <option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
+                            <option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
+                            <option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
+                            <option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
 						</select>
 					</div>
 					<button
@@ -84,9 +79,9 @@
 						name="action"
 					>
 						Submit
-						<!-- send icon not displaying!!! -->
 						<i class="material-icons right">send</i>
 					</button>
+					</div>
 				</form>
 				<!-- form end -->
 
@@ -97,6 +92,7 @@
 							<div class="card-image">
 								<img src="assets/images/ice-cream-410330_1280.jpg" />
 							</div>
+							<span class="card-title">Quote Author</span>
 							<div class="card-content">
 								<span class="card-title">Quote Author</span>
 								<p>Quote</p>
@@ -104,7 +100,7 @@
 						</div>
 					</div>
 				</div>
-
+				<div>
 				<!-- go back/try again button -->
 				<h4 class="second-helping">
 					Still hungry? How about a second serving?
@@ -112,6 +108,7 @@
 				<a class="btn-floating btn-large waves-effect waves-light red"
 					><i class="material-icons">add</i></a
 				>
+
 			</main>
 			<footer class="page-footer col s12">
 				<div class="container">
@@ -145,7 +142,7 @@
 					</div>
 				</div>
 			</footer>
-		</div>
+		<!-- </div> -->
 		<!-- not sure if we need the js materialize link but included it just incase -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="./assets/js/script.js"></script>
