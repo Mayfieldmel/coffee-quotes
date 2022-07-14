@@ -113,7 +113,7 @@ form {
 }
 
 .second-helping {
-	color: var(--secondary);
+	color: var(--tertiary-dark);
 }
 
 .footer-copyright {
@@ -124,7 +124,7 @@ form {
 
 .submit-button {
 	position: relative;
-	left: 60%;
+	right: 15%;
 }
 
 .form {
