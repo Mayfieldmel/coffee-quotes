@@ -1,0 +1,90 @@
+/* :root {
+	--primary: #fc7869;
+	--secondary: gray;
+	--tertiary-light: #dfe667;
+	--tertiary-dark: #7ea310;
+	--border-radius: 8px;
+} */
+
+:root {
+	--primary: #f55353;
+	--secondary: gray;
+	--tertiary-light: #dfe667;
+	--tertiary-dark: #143f6b;
+	--border-radius: 8px;
+}
+
+* {
+	box-sizing: border-box;
+}
+/* 
+font-family: 'Caveat', cursive;
+font-family: 'Fira Sans Condensed', sans-serif;
+font-family: 'Fira Sans Extra Condensed', sans-serif; */
+
+body {
+	line-height: 1.5;
+	font-size: 16px;
+	font-family: "Fira Sans Condensed", sans-serif;
+	background-color: var(--tertiary-light);
+}
+
+h1 {
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-weight: bolder;
+	font-size: 90px;
+	margin-bottom: 0;
+	color: var(--tertiary-dark);
+	text-align: center;
+	flex: auto;
+	flex-shrink: calc();
+}
+
+h2 {
+	font-family: "Caveat", cursive;
+	font-size: 3.25rem;
+	margin-top: 0;
+	text-align: center;
+}
+
+h3 {
+	font-size: 3rem;
+	text-align: center;
+	background-color: var(--primary);
+	padding: 5px;
+}
+
+h4 {
+	color: var(--secondary);
+}
+
+form {
+	border: solid 3px var(--primary);
+	background-color: var(--primary);
+	border-radius: var(--border-radius);
+}
+
+.option-head {
+	font-family: "Caveat", cursive;
+	font-size: 2rem;
+}
+
+.second-helping {
+	color: var(--tertiary-dark);
+}
+
+.footer-copyright {
+	text-align: center;
+	color: var(--secondary);
+	background-color: var(--tertiary-dark);
+}
+
+.submit-button {
+	position: relative;
+	right: 15%;
+}
+
+.form {
+	height: auto;
+	padding-bottom: 40px;
+}
