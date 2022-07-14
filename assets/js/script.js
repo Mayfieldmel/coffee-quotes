@@ -29,11 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   //get "tag" value from dropdown list - 
-  var tagVal = function(event) {
+  var tagVal = function() {
     var selectEl = document.querySelector("#quote-type")
-    selectEl.addEventListener("change",function(event) {
-      var tagEl = document.getElementById(selectEl).value;
-    })
+    selectEl.addEventListener("change",function() {
+    var tagEl = document.getElementById(selectEl).value;
+    return tagEl;
+    });
+    console.log(tagEl)
   }
 
   //add "tag" value to end of URL to get quote from that "tag" value
