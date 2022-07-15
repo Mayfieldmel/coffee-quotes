@@ -57,7 +57,10 @@ header {
 
 .icon-box {
 	width: 15%;
+<<<<<<< HEAD
 	height: 15%;
+=======
+>>>>>>> d7c90acedd983e290eb0768362b8447e836fd520
 }
 
 h1 {
@@ -158,6 +161,95 @@ form {
 	float: none;
 	width: 70vw;
 	border-radius: var(border-radius);
+<<<<<<< HEAD
+=======
+}
+
+.options {
+	font-family: "Caveat", cursive;
+	font-size: 5rem;
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+}
+
+.row {
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.second-helping {
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+	text-align: center;
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border-radius: var(--border-radius);
+}
+
+.more-button {
+	background-color: var(--primary);
+	box-shadow: inset 0 -0.6em 0 -0.35em var(--tertiary-dark);
+	cursor: pointer;
+	flex-wrap: wrap;
+}
+
+.more-button:hover {
+	background-color: var(--tertiary-dark);
+	color: var(--tertiary-light);
+}
+
+.more-button:active {
+	box-shadow: 0 0px var(--secondary);
+	top: 0;
+}
+
+.page-footer {
+	background-color: var(--primary);
+	color: var(--tertiary-dark);
+	font-family: "Caveat", cursive;
+	font-size: 30px;
+	margin: 0px 40px;
+	text-align: center;
+	border-radius: var(--border-radius);
+}
+
+.links {
+	color: var(--tertiary-light);
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-size: 2rem;
+}
+
+.footer-copyright {
+	text-align: center;
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+	padding: 15px 0;
+	border-radius: var(--border-radius);
+}
+
+.transbox {
+	margin-bottom: 30px;
+	background-color: #ffffff;
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-footer {
+	margin-bottom: 30px;
+	background-color: var(--primary);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-green {
+	margin-bottom: 30px;
+	background-color: var(--tertiary-light);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+>>>>>>> d7c90acedd983e290eb0768362b8447e836fd520
 }
 
 .options {
