@@ -19,33 +19,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // 
     var formEl = document.querySelector(".form")
     var submitBtnEl = document.querySelector("#submit")
-        var submit = function() {
-            submitBtnEl.preventDefault();
-        };
-    var selectFoodEl = document.querySelector("#select-food")
-    var foodTypeInput = selectFoodEl.value
         
-    
-    
+    var selectFoodEl = document.querySelector("#select-food");
+    var foodTypeInput = selectFoodEl.value;
+
+    // get food type
+    // var getFoodType = function() {
+    //     var selectFoodEl = document.querySelector("#select-food");
+    //     selectFoodEl.addEventListener("change", function() {
+    //         var foodTypeInput = document.querySelector("#select-food").value;
+    //         console.log(foodTypeInput);
+    //         return foodTypeInput;
+    //         });
+    //     }
 
     var getFoodImage = function() {
-        
+        // submitBtnEl.preventDefault();
+        console.log(foodTypeInput)
         // var apiUrl = "https://foodish-api.herokuapp.com/images/" + foodTypeInput + "/";
-        var apiUrl = "https://cors-anywhere.herokuapp.com/https://foodish-api.herokuapp.com/images/pizza/"
+        var apiUrl = "https://foodish-api.herokuapp.com/images/burger/"
         fetch(apiUrl).then(function(response) {
             if(response.ok) {
-                response.json().then(function(data){
+                response.json().then(function(data) {
                     console.log(data);
-                });
+                })
             } else {
                 alert('Error: ' + response.statusText);
               }
-            })
+        })
             .catch(function (error) {
               alert('Unable to connect to foodish database');
-            });
-        };
-    console.log(foodTypeInput)
+            })
+           
+    };
+    
 
 formEl.addEventListener("submit", getFoodImage());
 
@@ -85,5 +92,5 @@ formEl.addEventListener("submit", getFoodImage());
     
 
 
-  }
+//   }
   

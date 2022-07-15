@@ -23,9 +23,10 @@
 	</head>
 	<body>
 		<!-- materialize recommended enclosing all page content in a container div -->
-		<!-- MEDIA QUERY - get rid of <div class="container col s12"> -->
-			<header class="col s12">
-				<div class="main-title">
+		<!-- MEDIA QUERY - get rid of -->
+			<div class="container col s12 "> 
+			<header class="col s12 transbox-green">
+				<div class="header-title">
 					<span class="icon-box">
 						<img
 							class="logo-1 responsive-img"
@@ -33,22 +34,18 @@
 						/>
 					</span>
 					<h1 class="title">Food for Thought</h1>
-					<!-- <span>
-            <img class="logo-2 responsive-img" src="assets/images/food.png"
-          </span> -->
 				</div>
 				<h2 class="subtitle">"Feed your brain with every meal!"</h2>
 			</header>
-			<main class="container col s12"> <!-- MEDIA QUERY - add container->
+			<main class="col s12"> <!-- MEDIA QUERY - add container->
 				<!-- form start -->
 				<form class="form"> <!-- MEDIA QUERY - add row-->
 					<h3 class="main-title">What sounds good?</h3>
-					<!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
-					<div class="flex-column"> <!-- MEDIA QUERY - add flex-box-->
-					<div class="input-field col s4">
+					<!-- <div class="flex-column"> MEDIA QUERY - add flex-box -->
+					<div class="drop-title input-field col s12">
 						<select>
 							<option class="option-head" value="" disabled selected>
-								Topic Menu: Choose One!
+								Topic Menu: Pick One!
 							</option>
 							<option class="options" value="1">Anxiety</option>
 							<option class="options" value="2">Choice</option>
@@ -60,17 +57,17 @@
 							<option class="options" value="8">Time</option>
 						</select>
 					</div>
-					<div class="input-field col s4">
-						<select id="select-food" class="icons">
+					<div class="drop-title input-field col s12">
+						<select id="select-food">
 							<option class="option-head" value="" disabled selected>
-                                Food Menu: Choose One!
-                            </option>
-                            <option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
-                            <option value="desert" data-icon="./assets/images/desert-icon.jpg">Desert</option>
-                            <option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
-                            <option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
-                            <option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
-                            <option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
+								Food Menu: Pick One!
+							</option>
+							<option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
+							<option value="dessert" data-icon="./assets/images/desert-icon.jpg">Dessert</option>
+							<option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
+							<option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
+							<option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
+							<option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
 						</select>
 					</div>
 					<button
@@ -143,7 +140,7 @@
 					</div>
 				</div>
 			</footer>
-		<!-- </div> -->
+		</div>
 		<!-- not sure if we need the js materialize link but included it just incase -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="./assets/js/script.js"></script>
