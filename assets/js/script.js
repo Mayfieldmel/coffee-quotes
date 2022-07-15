@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 //         }
 //     });
     // 
-    var formEl = document.querySelector("#form-box")
-    var submitBtnEl = document.querySelector("#submit")
+    var formEl = document.querySelector("#form-box");
+    var submitBtnEl = document.querySelector("#submit");
+    var foodImageEl = document.querySelector("#food-image");
         
     var selectFoodEl = document.querySelector("#select-food");
     // var foodTypeInput = selectFoodEl.value;
@@ -31,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
         selectFoodEl.addEventListener("change", getFoodType)
     
+    var displayImage = function(data) {
+        var randomImage = data.image;
+        console.log(randomImage);
+        foodImageEl.setAttribute("src", randomImage)
+    }
+    
     var getFoodImage = function(event) {
         console.log("click");
         event.preventDefault();
@@ -39,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var apiUrl = "https://foodish-api.herokuapp.com/api/images/burger/"
         fetch(apiUrl).then(function(response) {
             if(response.ok) {
-                alert("we good");
                 response.json().then(function(data) {
                     console.log(data);
+                    displayImage(data);
                 })
             } else {
                 alert('Error: ' + response.statusText);
@@ -51,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
               alert('Unable to connect to foodish database');
               console.log(error);
             })
+     
            
     };
     
