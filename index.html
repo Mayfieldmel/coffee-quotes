@@ -23,7 +23,6 @@
 	</head>
 	<body>
 		<!-- materialize recommended enclosing all page content in a container div -->
-		<!-- MEDIA QUERY - get rid of -->
 			<div class="container col s12 "> 
 			<header class="col s12 transbox-green">
 				<div class="header-title">
@@ -37,9 +36,9 @@
 				</div>
 				<h2 class="subtitle">"Feed your brain with every meal!"</h2>
 			</header>
-			<main class="col s12"> <!-- MEDIA QUERY - add container->
+			<main class="col s12">
 				<!-- form start -->
-				<form class="form"> <!-- MEDIA QUERY - add row-->
+				<form class="form">
 					<h3 class="main-title">What sounds good?</h3>
 					<!-- <div class="flex-column"> MEDIA QUERY - add flex-box -->
 					<div class="drop-title input-field col s12">
@@ -97,14 +96,15 @@
 						</div>
 					</div>
 				</div>
-				<div>
 				<!-- go back/try again button -->
-				<h4 class="second-helping">
-					Still hungry? How about a second serving?
-				</h4>
-				<a class="btn-floating btn-large waves-effect waves-light red"
-					><i class="material-icons">add</i></a
-				>
+				<div class="seconds">
+					<h4 class="second-helping">
+						Still hungry? How about a second serving?
+					</h4>
+					<a class="btn-floating btn-large waves-effect waves-light red"
+						><i class="material-icons">add</i>
+					</a>
+				</div>
 
 			</main>
 			<footer class="page-footer col s12">
