@@ -32,15 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
     //         return foodTypeInput;
     //         });
     //     }
+  
 
-    var getFoodImage = function() {
-        // submitBtnEl.preventDefault();
-        console.log(foodTypeInput)
+    var getFoodImage = function(event) {
+        // event.preventDefault();
+        // console.log(foodTypeInput)
         // var apiUrl = "https://foodish-api.herokuapp.com/images/" + foodTypeInput + "/";
         var apiUrl = "https://foodish-api.herokuapp.com/images/burger/"
         fetch(apiUrl).then(function(response) {
             if(response.ok) {
-                response.json().then(function(data) {
+                response.then(function(data) {
                     console.log(data);
                 })
             } else {
