@@ -25,12 +25,23 @@
 		<!-- materialize recommended enclosing all page content in a container div -->
 		<!-- MEDIA QUERY - get rid of <div class="container col s12"> -->
 			<header class="col s12">
-				<h1 class="title">Food for Thought</h1>
+				<div class="main-title">
+					<span class="icon-box">
+						<img
+							class="logo-1 responsive-img"
+							src="assets/images/vecteezy_human-brain-idea-inspiration-icon-vector-for-web_3808375.png"
+						/>
+					</span>
+					<h1 class="title">Food for Thought</h1>
+					<!-- <span>
+            <img class="logo-2 responsive-img" src="assets/images/food.png"
+          </span> -->
+				</div>
 				<h2 class="subtitle">"Feed your brain with every meal!"</h2>
 			</header>
 			<main class="container col s12"> <!-- MEDIA QUERY - add container->
 				<!-- form start -->
-				<form class="form row"> <!-- MEDIA QUERY - add row-->
+				<form class="form"> <!-- MEDIA QUERY - add row-->
 					<h3 class="main-title">What sounds good?</h3>
 					<!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
 					<div class="flex-column"> <!-- MEDIA QUERY - add flex-box-->
@@ -84,6 +95,7 @@
 							</div>
 							<span class="card-title">Quote Author</span>
 							<div class="card-content">
+								<span class="card-title">Quote Author</span>
 								<p>Quote</p>
 							</div>
 						</div>
