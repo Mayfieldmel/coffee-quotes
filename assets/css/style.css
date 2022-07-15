@@ -20,6 +20,8 @@ body {
 	font-family: "Fira Sans Condensed", sans-serif;
 	background-image: url(../images/healthy-vegetables-wooden-table.jpg);
 	background-size: cover;
+	display: flex;
+	flex-direction: column;
 }
 
 header {
@@ -27,6 +29,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	margin-top: 40px;
+	border-radius: var(--border-radius);
 }
 
 .container {
@@ -37,6 +40,8 @@ header {
 
 .header-title {
 	display: flex;
+	flex-direction: row;
+
 }
 
 .logo-1 {
@@ -82,6 +87,15 @@ h4 {
 	color: var(--secondary);
 }
 
+h5 {
+	font-size: 3.65rem;
+}
+
+.drop-title {
+	font-size: 2rem;
+	color: var(--tertiary-dark);
+}
+
 form {
 	border: solid 3px var(--primary);
 	background-color: var(--primary);
@@ -102,8 +116,6 @@ form {
 	font-family: "Caveat", cursive;
 	font-size: 5rem;
 }
-
-
 
 .submit-button {
 	position: relative;
@@ -142,6 +154,9 @@ form {
 .card {
 	border: solid 10px var(--tertiary-light);
 	justify-items: center;
+	float: none;
+	width: 70vw;
+	border-radius: var(border-radius);
 }
 
 .options {
@@ -162,9 +177,10 @@ form {
 	background-color: var(--tertiary-light);
 	text-align: center;
 	padding: 15px;
-	margin: 0 40px;
-	flex-wrap: wrap;
-    justify-content: space-around;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border-radius: var(--border-radius);
 }
 
 .more-button {
@@ -186,17 +202,18 @@ form {
 
 .page-footer {
 	background-color: var(--primary);
-	color: var(--tertiary-light);
+	color: var(--tertiary-dark);
 	font-family: "Caveat", cursive;
 	font-size: 30px;
 	margin: 0px 40px;
 	text-align: center;
+	border-radius: var(--border-radius);
 }
 
 .links {
 	color: var(--tertiary-light);
 	font-family: "Fira Sans Condensed", sans-serif;
-	font-size: 14px;
+	font-size: 2rem;
 }
 
 .footer-copyright {
@@ -204,4 +221,26 @@ form {
 	color: var(--tertiary-dark);
 	background-color: var(--tertiary-light);
 	padding: 15px 0;
+	border-radius: var(--border-radius);
+}
+
+.transbox {
+	margin-bottom: 30px;
+	background-color: #ffffff;
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-footer {
+	margin-bottom: 30px;
+	background-color: var(--primary);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-green {
+	margin-bottom: 30px;
+	background-color: var(--tertiary-light);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
 }
