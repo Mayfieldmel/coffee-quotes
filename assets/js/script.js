@@ -17,31 +17,30 @@ document.addEventListener('DOMContentLoaded', function() {
 //         }
 //     });
     // 
-    var formEl = document.querySelector(".form")
+    var formEl = document.querySelector("#form-box")
     var submitBtnEl = document.querySelector("#submit")
         
     var selectFoodEl = document.querySelector("#select-food");
-    var foodTypeInput = selectFoodEl.value;
+    // var foodTypeInput = selectFoodEl.value;
 
     // get food type
-    // var getFoodType = function() {
-    //     var selectFoodEl = document.querySelector("#select-food");
-    //     selectFoodEl.addEventListener("change", function() {
-    //         var foodTypeInput = document.querySelector("#select-food").value;
-    //         console.log(foodTypeInput);
-    //         return foodTypeInput;
-    //         });
-    //     }
+    var getFoodType = function() {
+        console.log(selectFoodEl)
+        console.log(event.target);
+        };
   
-
+        selectFoodEl.addEventListener("change", getFoodType)
+    
     var getFoodImage = function(event) {
-        // event.preventDefault();
+        console.log("click");
+        event.preventDefault();
         // console.log(foodTypeInput)
-        // var apiUrl = "https://foodish-api.herokuapp.com/images/" + foodTypeInput + "/";
-        var apiUrl = "https://foodish-api.herokuapp.com/images/burger/"
+        // var apiUrl = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
+        var apiUrl = "https://foodish-api.herokuapp.com/api/images/burger/"
         fetch(apiUrl).then(function(response) {
             if(response.ok) {
-                response.then(function(data) {
+                alert("we good");
+                response.json().then(function(data) {
                     console.log(data);
                 })
             } else {
@@ -50,12 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
             .catch(function (error) {
               alert('Unable to connect to foodish database');
+              console.log(error);
             })
            
     };
     
 
-formEl.addEventListener("submit", getFoodImage());
+    formEl.addEventListener("submit", getFoodImage);
 
 //     //   var quoteEl = document.querySelector
 //   var apiUrl = "https://api.quotable.io/random"
