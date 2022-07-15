@@ -1,0 +1,246 @@
+:root {
+	--primary: #f55353;
+	--secondary: gray;
+	--tertiary-light: #dfe667;
+	--tertiary-dark: #143f6b;
+	--border-radius: 8px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.5;
+	font-size: 16px;
+	font-family: "Fira Sans Condensed", sans-serif;
+	background-image: url(../images/healthy-vegetables-wooden-table.jpg);
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	background-color: var(--tertiary-light);
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+	border-radius: var(--border-radius);
+}
+
+.container {
+	margin-top: 30px;
+	flex: auto;
+	flex-shrink: calc();
+}
+
+.header-title {
+	display: flex;
+	flex-direction: row;
+}
+
+.logo-1 {
+	width: 100%;
+	height: 100%;
+	float: inline-start;
+}
+
+.logo-2 {
+	float: inline-end;
+	width: 90px;
+}
+
+.icon-box {
+	width: 15%;
+}
+
+h1 {
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-weight: bolder;
+	font-size: 75px;
+	margin-bottom: 0;
+	color: var(--tertiary-dark);
+	text-align: center;
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+	font-family: "Caveat", cursive;
+	font-size: 3.25rem;
+	margin-top: 0;
+	text-align: center;
+}
+
+h3 {
+	font-size: 3rem;
+	text-align: center;
+	background-color: var(--primary);
+	padding: 5px;
+}
+
+h4 {
+	color: var(--secondary);
+}
+
+h5 {
+	font-size: 3.65rem;
+}
+
+.drop-title {
+	font-size: 2rem;
+	color: var(--tertiary-dark);
+}
+
+form {
+	border: solid 3px var(--primary);
+	background-color: var(--primary);
+	border-radius: var(--border-radius);
+}
+
+.select {
+	position: relative;
+	left: 50px;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.option-head {
+	font-family: "Caveat", cursive;
+	font-size: 5rem;
+	font-weight: bolder;
+}
+
+.submit-button {
+	position: relative;
+	left: 60%;
+	background-color: var(--tertiary-light);
+	color: var(--tertiary-dark);
+	border: solid 2px var(--tertiary-dark);
+	border-radius: var(--border-radius);
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 5px;
+	height: 45px;
+	width: 150px;
+	box-shadow: inset 0 -0.6em 0 -0.35em var(--tertiary-dark);
+	cursor: pointer;
+}
+
+.submit-button:hover {
+	color: var(--tertiary-light);
+	background-color: var(--tertiary-dark);
+}
+
+.submit-button:active {
+	box-shadow: 0 0px var(--secondary);
+	top: 0;
+}
+
+.form {
+	height: auto;
+	padding-bottom: 40px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.card {
+	border: solid 10px var(--tertiary-light);
+	justify-items: center;
+	float: none;
+	width: 70vw;
+	border-radius: var(border-radius);
+}
+
+.options {
+	font-family: "Caveat", cursive;
+	font-size: 5rem;
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+}
+
+.row {
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.second-helping {
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+	text-align: center;
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border-radius: var(--border-radius);
+}
+
+.more-button {
+	background-color: var(--primary);
+	box-shadow: inset 0 -0.6em 0 -0.35em var(--tertiary-dark);
+	cursor: pointer;
+	flex-wrap: wrap;
+}
+
+.more-button:hover {
+	background-color: var(--tertiary-dark);
+	color: var(--tertiary-light);
+}
+
+.more-button:active {
+	box-shadow: 0 0px var(--secondary);
+	top: 0;
+}
+
+.page-footer {
+	background-color: var(--primary);
+	color: var(--tertiary-dark);
+	font-family: "Caveat", cursive;
+	font-size: 30px;
+	margin: 0px 40px;
+	text-align: center;
+	border-radius: var(--border-radius);
+}
+
+.links {
+	color: var(--tertiary-light);
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-size: 2rem;
+}
+
+.links:hover {
+	color: var(--tertiary-dark);
+}
+
+.footer-copyright {
+	text-align: center;
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+	padding: 15px 0;
+	border-radius: var(--border-radius);
+}
+
+.transbox {
+	margin-bottom: 30px;
+	background-color: #ffffff;
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-footer {
+	margin-bottom: 30px;
+	background-color: var(--primary);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-green {
+	margin-bottom: 30px;
+	background-color: var(--tertiary-light);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}

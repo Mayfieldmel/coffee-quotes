@@ -1,104 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Food for Thought</title>
-</head>
-<body>
-    <!-- materialize recommended enclosing all page content in a container div -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caveat&family=Fira+Sans+Condensed:wght@200;400;800&family=Fira+Sans+Extra+Condensed:wght@200;400;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<title>Food for Thought</title>
+	</head>
+	<body>
+		<!-- materialize recommended enclosing all page content in a container div -->
+		<!-- MEDIA QUERY - get rid of  -->
     <div class="container col s12">
-        <header class="col s12">
-            <h1>FOOD for THOUGHT</h1>
-            <h2>"Feed your brain with every meal!"</h2>
-        </header>
-        <main class="col s12">
-            <!-- form start -->
-            <form>
-                <h3>Feeling hungry?</h3>
-                <!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
-                <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Pick a quote topic</option>
-                        <option value="1">Anxiety</option>
-                        <option value="2">Choice</option>
-                        <option value="3">Dreams</option>
-                        <option value="4">Future</option>
-                        <option value="5">Inspiration</option>
-                        <option value="6">Love</option>
-                        <option value="7">Pain</option>
-                        <option value="8">Time</option>
-                    </select>
-                </div>
-                <div class="input-field col s12 m6">
-                    <select class="icons">
-                      <option value="" disabled selected>Pick a food type</option>
-                      <option value="pizza" data-icon="">Pizza</option>
-                      <option value="desert" data-icon="">Desert</option>
-                      <option value="pasta" data-icon="">Pasta</option>
-                      <option value="burger" data-icon="">Burger</option>
-                      <option value="butter-chicken" data-icon="">Chicken</option>
-                      <option value="rice" data-icon="">Rice</option>
-                    </select>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <!-- send icon not displaying!!! -->
-                    <i class="material-icons right">send</i>
-                </button>
-            </form>
-            <!-- form end -->
-         
-            <!-- return of search-->
-            <div class="row">
-                <div class="col s12 m7">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/sample-1.jpg">
-                      <span class="card-title">Quote Author</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Quote</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- go back/try again button -->
-              <h4>Still hungry? How about a second serving?</h4>
-              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </main>
-        <footer class="page-footer col s12">
-            <div class="container">
-              <div class="row">
-                <div class="col l6 s12">
-                  <h5 class="white-text">Recent Searches:</h5>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                  <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="footer-copyright">
-              <div class="container">
-              Contributions with ❤️ by Christina DuWors, Danielle Locklear, Melissa Mayfield, Zach Odachowski, & Jayden Tripp.
-              </div>
-            </div>
-          </footer>
-              
+			<header class="col s12 transbox-green">
+				<div class="header-title">
+					<span class="icon-box">
+						<img
+							class="logo-1 responsive-img"
+							src="assets/images/vecteezy_human-brain-idea-inspiration-icon-vector-for-web_3808375.png"
+						/>
+					</span>
+					<h1 class="title">Food for Thought</h1>
+					<!-- <span>
+            <img class="logo-2 responsive-img" src="assets/images/food.png"
+          </span> -->
+				</div>
+				<h2 class="subtitle">"Feed your brain and your soul!"</h2>
+			</header>
+			<main class="col s12">
 
+				<!-- form start -->
+				<form class="form transbox-footer"> 
+					<h3 class="main-title">Check out the Menu!</h3>
+					<!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
+					<div class="drop-title input-field col s12">
+						<select>
+							<option class="option-head" value="" disabled selected>
+								TOPICS: Choose One!
+							</option>
+							<option class="options" value="1">Anxiety</option>
+							<option class="options" value="2">Choice</option>
+							<option class="options" value="3">Dreams</option>
+							<option class="options" value="4">Future</option>
+							<option class="options" value="5">Inspiration</option>
+							<option class="options" value="6">Love</option>
+							<option class="options" value="7">Pain</option>
+							<option class="options" value="8">Time</option>
+						</select>
+					</div>
+					<div class="drop-title input-field col s12">
+						<select>
+							<option class="option-head" value="" disabled selected>
+								FOODS: Choose One!
+							</option>
+							<option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
+							<option value="dessert" data-icon="./assets/images/desert-icon.jpg">Dessert</option>
+							<option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
+							<option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
+							<option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
+							<option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
+						</select>
+					</div>
 
-    </div>
-    <!-- not sure if we need the js materialize link but included it just incase -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+					<button
+						class="submit-button btn"
+						type="submit"
+						name="action"
+					>
+						Submit
+						<i class="material-icons right">send</i>
+					</button>
+					</div>
+				</form>
+				<!-- form end -->
+
+				<!-- return of search-->
+				<div class="row">
+					<div class="col s12 m7">
+						<div class="card">
+							<div class="card-image">
+								<img src="assets/images/ice-cream-410330_1280.jpg" />
+								<span class="card-title">Quote Author</span>
+							</div>
+							<span class="card-title">Quote Author</span>
+							<div class="card-content">
+								<p>Quote</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+				<!-- go back/try again button -->
+        <div class="container row second-helping transbox-green">
+          <div>
+				<h4>
+					Still hungry? How about a second serving?
+				</h4>
+      </div>
+      <div>
+				<a class="more-button btn-floating btn-large"
+					><i class="material-icons">add</i></a
+				>
+      </div>
+      </div>
+			</main>
+			<footer class="col s12">
+				<div class="container">
+					<div class="row page-footer transbox-footer">
+						<div class="col l6 s12">
+							<h5>Order Again!</h5>
+						</div>
+						<div class="col l4 offset-l2 s12">
+							<ul>
+								<li>
+									<a class="links" href="#!">Link 1</a>
+								</li>
+								<li>
+									<a class="links" href="#!">Link 2</a>
+								</li>
+								<li>
+									<a class="links" href="#!">Link 3</a>
+								</li>
+								<li>
+									<a class="links" href="#!">Link 4</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="container footer-copyright transbox">
+						Contributions with ❤️  by: <br />
+						Christina DuWors, Danielle Locklear, Melissa Mayfield,
+            <br/> Zach Odachowski, & Jayden Tripp.
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- not sure if we need the js materialize link but included it just incase -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="./assets/js/script.js"></script>
+	</body>
 </html>
