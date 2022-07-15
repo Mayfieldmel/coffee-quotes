@@ -23,9 +23,10 @@
 	</head>
 	<body>
 		<!-- materialize recommended enclosing all page content in a container div -->
-		<!-- MEDIA QUERY - get rid of <div class="container col s12"> -->
+		<!-- MEDIA QUERY - get rid of  -->
+    <div class="container col s12">
 			<header class="col s12">
-				<div class="main-title">
+				<div class="header-title">
 					<span class="icon-box">
 						<img
 							class="logo-1 responsive-img"
@@ -39,13 +40,13 @@
 				</div>
 				<h2 class="subtitle">"Feed your brain with every meal!"</h2>
 			</header>
-			<main class="container col s12"> <!-- MEDIA QUERY - add container->
+			<main class="col s12">
+
 				<!-- form start -->
-				<form class="form row"> <!-- MEDIA QUERY - add row-->
+				<form class="form"> 
 					<h3 class="main-title">What sounds good?</h3>
 					<!-- materialize says to wrap dropdown in .input-field but drop down not displaying!! but displays if delete materialize link-->
-					<div class="flex-column"> <!-- MEDIA QUERY - add flex-box-->
-					<div class="input-field col s4">
+					<div class="input-field col s12">
 						<select>
 							<option class="option-head" value="" disabled selected>
 								Topic Menu: Choose One!
@@ -60,21 +61,22 @@
 							<option class="options" value="8">Time</option>
 						</select>
 					</div>
-					<div class="input-field col s4">
-						<select class="icons">
+					<div class="input-field col s12">
+						<select>
 							<option class="option-head" value="" disabled selected>
-                                Food Menu: Choose One!
-                            </option>
-                            <option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
-                            <option value="desert" data-icon="./assets/images/desert-icon.jpg">Desert</option>
-                            <option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
-                            <option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
-                            <option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
-                            <option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
+								Food Menu: Choose One!
+							</option>
+							<option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
+							<option value="dessert" data-icon="./assets/images/desert-icon.jpg">Dessert</option>
+							<option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
+							<option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
+							<option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
+							<option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
 						</select>
 					</div>
+
 					<button
-						class="submit-button btn waves-effect waves-light"
+						class="submit-button btn"
 						type="submit"
 						name="action"
 					>
@@ -102,47 +104,52 @@
 				</div>
 				<div>
 				<!-- go back/try again button -->
-				<h4 class="second-helping">
+        <div class="container row second-helping">
+          <div>
+				<h4>
 					Still hungry? How about a second serving?
 				</h4>
-				<a class="btn-floating btn-large waves-effect waves-light red"
+      </div>
+      <div>
+				<a class="more-button btn-floating btn-large"
 					><i class="material-icons">add</i></a
 				>
-
+      </div>
+      </div>
 			</main>
-			<footer class="page-footer col s12">
+			<footer class="col s12">
 				<div class="container">
-					<div class="row">
+					<div class="row page-footer">
 						<div class="col l6 s12">
-							<h5 class="white-text">Recent Searches:</h5>
+							<h5>Order Again!</h5>
 						</div>
 						<div class="col l4 offset-l2 s12">
 							<ul>
 								<li>
-									<a class="grey-text text-lighten-3" href="#!">Link 1</a>
+									<a class="links" href="#!">Link 1</a>
 								</li>
 								<li>
-									<a class="grey-text text-lighten-3" href="#!">Link 2</a>
+									<a class="links" href="#!">Link 2</a>
 								</li>
 								<li>
-									<a class="grey-text text-lighten-3" href="#!">Link 3</a>
+									<a class="links" href="#!">Link 3</a>
 								</li>
 								<li>
-									<a class="grey-text text-lighten-3" href="#!">Link 4</a>
+									<a class="links" href="#!">Link 4</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="footer-copyright">
-					<div class="container">
-						Contributions with ❤️ by <br />
-						Christina DuWors, Danielle Locklear, Melissa Mayfield, Zach
-						Odachowski, & Jayden Tripp.
+				<div>
+					<div class="container footer-copyright">
+						Contributions with ❤️  by: <br />
+						Christina DuWors, Danielle Locklear, Melissa Mayfield,
+            <br/> Zach Odachowski, & Jayden Tripp.
 					</div>
 				</div>
 			</footer>
-		<!-- </div> -->
+		</div>
 		<!-- not sure if we need the js materialize link but included it just incase -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="./assets/js/script.js"></script>

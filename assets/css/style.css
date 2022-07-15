@@ -26,6 +26,7 @@ header {
 	background-color: var(--tertiary-light);
 	display: flex;
 	flex-direction: column;
+	margin-top: 40px;
 }
 
 .container {
@@ -34,7 +35,7 @@ header {
 	flex-shrink: calc();
 }
 
-.main-title {
+.header-title {
 	display: flex;
 }
 
@@ -60,6 +61,7 @@ h1 {
 	margin-bottom: 0;
 	color: var(--tertiary-dark);
 	text-align: center;
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -98,29 +100,108 @@ form {
 
 .option-head {
 	font-family: "Caveat", cursive;
-	font-size: 2rem;
+	font-size: 5rem;
 }
 
-.second-helping {
-	color: var(--tertiary-dark);
-}
 
-.footer-copyright {
-	text-align: center;
-	color: var(--secondary);
-	background-color: var(--tertiary-dark);
-}
 
 .submit-button {
 	position: relative;
-	right: 15%;
+	left: 60%;
+	background-color: var(--tertiary-light);
+	color: var(--tertiary-dark);
+	border: solid 2px var(--tertiary-dark);
+	border-radius: var(--border-radius);
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 5px;
+	height: 45px;
+	width: 180px;
+	box-shadow: inset 0 -0.6em 0 -0.35em var(--tertiary-dark);
+	cursor: pointer;
+}
+
+.submit-button:hover {
+	color: var(--tertiary-light);
+	background-color: var(--tertiary-dark);
+}
+
+.submit-button:active {
+	box-shadow: 0 0px var(--secondary);
+	top: 0;
 }
 
 .form {
 	height: auto;
 	padding-bottom: 40px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 .card {
 	border: solid 10px var(--tertiary-light);
+	justify-items: center;
+}
+
+.options {
+	font-family: "Caveat", cursive;
+	font-size: 5rem;
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+}
+
+.row {
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.second-helping {
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+	text-align: center;
+	padding: 15px;
+	margin: 0 40px;
+	flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.more-button {
+	background-color: var(--primary);
+	box-shadow: inset 0 -0.6em 0 -0.35em var(--tertiary-dark);
+	cursor: pointer;
+	flex-wrap: wrap;
+}
+
+.more-button:hover {
+	background-color: var(--tertiary-dark);
+	color: var(--tertiary-light);
+}
+
+.more-button:active {
+	box-shadow: 0 0px var(--secondary);
+	top: 0;
+}
+
+.page-footer {
+	background-color: var(--primary);
+	color: var(--tertiary-light);
+	font-family: "Caveat", cursive;
+	font-size: 30px;
+	margin: 0px 40px;
+	text-align: center;
+}
+
+.links {
+	color: var(--tertiary-light);
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-size: 14px;
+}
+
+.footer-copyright {
+	text-align: center;
+	color: var(--tertiary-dark);
+	background-color: var(--tertiary-light);
+	padding: 15px 0;
 }
