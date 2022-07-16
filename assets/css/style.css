@@ -74,13 +74,14 @@ h2 {
 
 h3 {
 	font-size: 3rem;
+	color: var(--tertiary-dark) !important;
 	text-align: center;
 	background-color: var(--primary);
 	padding: 5px;
 }
 
 h4 {
-	color: var(--secondary);
+	color: var(--tertiary-dark);
 	padding-left: 20px;
 }
 
@@ -89,12 +90,12 @@ h5 {
 }
 
 .drop-title {
-	font-size: 2rem;
-	color: var(--tertiary-dark);
+	font-size: 2rem !important;
+	color: var(--tertiary-dark) !important;
 }
 
 form {
-	border: solid 3px var(--primary);
+	border: solid 3px var(--tertiary-dark);
 	background-color: var(--primary);
 	border-radius: var(--border-radius);
 }
@@ -171,11 +172,11 @@ form {
 }
 
 .return-image {
-	width: 100%;
+	width: 70vw;
 }
 
-.seconds {
-	display: flex;
+.second-helping {
+	color: var(--tertiary-dark) !important;
 	background-color: var(--tertiary-light);
 	text-align: center;
 	padding: 15px;
@@ -257,4 +258,11 @@ form {
 	background-color: var(--tertiary-light);
 	border: 1px solid var(--tertiary-dark);
 	opacity: 0.9;
+}
+
+.transparent {
+	background-color: var(--primary);
+	color: var(--tertiary-dark);
+	border-color: var(--primary);
+	text-align: center;
 }
