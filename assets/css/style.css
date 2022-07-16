@@ -52,6 +52,7 @@ header {
 
 .icon-box {
 	width: 15%;
+
 }
 
 h1 {
@@ -81,6 +82,7 @@ h3 {
 
 h4 {
 	color: var(--tertiary-dark);
+	padding-left: 20px;
 }
 
 h5 {
@@ -169,6 +171,10 @@ form {
 	justify-content: center;
 }
 
+.return-image {
+	width: 70vw;
+}
+
 .second-helping {
 	color: var(--tertiary-dark) !important;
 	background-color: var(--tertiary-light);
@@ -178,13 +184,21 @@ form {
 	flex-direction: row;
 	justify-content: space-around;
 	border-radius: var(--border-radius);
+	flex-wrap: wrap;
+}
+
+.second-helping {
+	color: var(--tertiary-dark);
+	display: flex;
+	justify-content: space-between;
 }
 
 .more-button {
 	background-color: var(--primary);
 	box-shadow: inset 0 -0.6em 0 -0.35em var(--tertiary-dark);
 	cursor: pointer;
-	flex-wrap: wrap;
+	
+
 }
 
 .more-button:hover {
