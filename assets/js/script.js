@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //         }
 //     });
     // 
+    var ContainerEl = document.querySelector("#container");
     var formEl = document.querySelector("#form-box");
     var submitBtnEl = document.querySelector("#submit");
     var foodImageEl = document.querySelector("#food-image");
@@ -51,12 +52,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     displayImage(data);
                 })
             } else {
-                alert('Error: ' + response.statusText);
+                var modal = document.createElement("div");
+                    modal.classList = "modal";
+                    ContainerEl.appendChild(modal);
+                var modalContent =  document.createElement("div");
+                    modalContent.classList = "modal-content";
+                    modalContent.textContent = 'Error: ' + response.statusText;
+                    modal.appendChild(modalContent);
+                var modalFooter = document.createElement("div");
+                    modalFooter.classList = "modal-footer";
+                    modal.appendChild(modalFooter);
+                var modalClose = document.createElement("button");
+                    modalClose.classList = "modal-close waves-effect waves-green btn-flat";
+                    modalFooter.appendChild(modalClose);
+                
               }
         })
             .catch(function (error) {
-              alert('Unable to connect to foodish database');
-              console.log(error);
+                var modal = document.createElement("div");
+                    modal.classList = "modal";
+                    ContainerEl.appendChild(modal);
+                var modalContent =  document.createElement("div");
+                    modalContent.classList = "modal-content";
+                    modalContent.textContent = 'Error: ' + response.statusText;
+                    modal.appendChild(modalContent);
+                var modalFooter = document.createElement("div");
+                    modalFooter.classList = "modal-footer";
+                    modal.appendChild(modalFooter);
+                var modalClose = document.createElement("button");
+                    modalClose.classList = "modal-close waves-effect waves-green btn-flat";
+                    modalFooter.appendChild(modalClose);
+
             })
      
            
@@ -87,9 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   //add "tag" value to end of URL to get quote from that "tag" value
-var tagUrl = function () {
-apiUrlquote.searchParams.append(tagEl);
-var newUrl = apiUrlquote.toString();
+    var tagUrl = function () {
+    apiUrlquote.searchParams.append(tagEl);
+    var newUrl = apiUrlquote.toString();
 }
 
 
