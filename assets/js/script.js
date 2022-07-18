@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
           var userVal= function(){
                 var userEl = document.getElementById(selectFoodEl).value;
                 return userEl;
-              });
+              };
           console.log(userEl)
-            }; userVal();
+             userVal();
 
             var tagLink =function () {
               apiLinkimage.searchParams.append(userEl);
