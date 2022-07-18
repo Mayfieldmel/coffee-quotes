@@ -173,7 +173,7 @@ form {
 
 .return-image {
 	width: 70vw;
-}
+	object-fit: contain;
 
 .second-helping {
 	color: var(--tertiary-dark) !important;
@@ -256,6 +256,13 @@ form {
 .transbox-green {
 	margin-bottom: 30px;
 	background-color: var(--tertiary-light);
+	border: 1px solid var(--tertiary-dark);
+	opacity: 0.9;
+}
+
+.transbox-red {
+	margin-bottom: 30px;
+	background-color: var(--primary);
 	border: 1px solid var(--tertiary-dark);
 	opacity: 0.9;
 }
