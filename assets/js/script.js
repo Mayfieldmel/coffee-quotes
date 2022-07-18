@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // fetch food image from API
     var getFoodImage = function(event) {
         // console.log(foodTypeInput)
-        // var apiUrl = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
-        var apiUrl = "https://foodish-api.herokuapp.com/api/images/burger/"
-        fetch(apiUrl).then(function(response) {
+        // var apiLink = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
+        var apiLink = "https://foodish-api.herokuapp.com/api/images/burger/"
+        fetch(apiLink).then(function(response) {
             if(response.ok) {
                 response.json().then(function(data) {
                     console.log(data);
@@ -56,8 +56,23 @@ document.addEventListener('DOMContentLoaded', function() {
            
     };
     
+<<<<<<< HEAD
    
 
+=======
+          var userVal= function(){
+                var userEl = document.getElementById(selectFoodEl).value;
+                return userEl;
+              });
+          console.log(userEl)
+            }; userVal();
+
+            var tagLink =function () {
+              apiLinkimage.searchParams.append(userEl);
+            }
+            
+    selectFoodEl.addEventListener("submit", getFoodImage)
+>>>>>>> 6641d0acadd3769f54c034a5f2b4a99cd4c215ce
 
   //get "tag" value from dropdown list - 
 //   var tagVal = function() {
