@@ -63,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
           var userVal= function(){
-              selectFoodEl.addEventListener("submit", function() {
-                var userEl = document.getElementById(selectFoodEl).textContent;
+                var userEl = document.getElementById(selectFoodEl).value;
                 return userEl;
               });
           console.log(userEl)
@@ -73,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
             var tagLink =function () {
               apiLinkimage.searchParams.append(userEl);
             }
-
+            
+    selectFoodEl.addEventListener("submit", userVal)
 
     //   var quoteEl = document.querySelector
   var apiUrl = "https://api.quotable.io/random"
