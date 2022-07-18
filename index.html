@@ -41,11 +41,11 @@
 		<!-- main body start -->
 			<main class="col s12">
 				<!-- form start -->
-				<form id="form-box" class="form">
+				<form id="form-box" class="form transbox-footer">
 					<h3 class="main-title">What sounds good?</h3>
 					<!-- quote dropdown menu -->
 					<div class="drop-title input-field col s12">
-						<select>
+						<select id="quote-type" class="transparent browser-default">
 							<option class="option-head" value="" disabled selected>
 								TOPICS: Choose One!
 							</option>
@@ -61,7 +61,7 @@
 					</div>
 					<!-- food dropdown menu -->
 					<div class="drop-title input-field col s12">
-						<select id="select-food">
+						<select id="select-food" class="transparent browser-default">
 							<option class="option-head" value="" disabled selected>
 								FOODS: Choose One!
 							</option>
@@ -95,8 +95,8 @@
 							</div>
 							<!-- QUOTE -->
 							<div class="card-content">
-								<span class="card-title">Quote</span>
-								<p>Quote Author</p>
+								<span id="quote" class="card-title">Quote</span>
+								<p id="quote-author">Quote Author</p>
 							</div>
 						</div>
 					</div>
