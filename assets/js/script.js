@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // fetch food image from API
     var getFoodImage = function(event) {
         // console.log(foodTypeInput)
-        // var apiLink = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
-        var apiLink = "https://foodish-api.herokuapp.com/api/images/burger/"
-        fetch(apiLink).then(function(response) {
+        // var apiUrl = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
+        var apiUrl = "https://foodish-api.herokuapp.com/api/images/burger/"
+        fetch(apiUrl).then(function(response) {
             if(response.ok) {
                 response.json().then(function(data) {
                     console.log(data);
@@ -51,49 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function (error) {
               alert('Unable to connect to foodish database');
               console.log(error);
-            })
-     
-           
+            })    
     };
-    
-<<<<<<< HEAD
-   
 
-=======
-          var userVal= function(){
-                var userEl = document.getElementById(selectFoodEl).value;
-                return userEl;
-              });
-          console.log(userEl)
-            }; userVal();
-
-            var tagLink =function () {
-              apiLinkimage.searchParams.append(userEl);
-            }
-            
-    selectFoodEl.addEventListener("submit", getFoodImage)
->>>>>>> 6641d0acadd3769f54c034a5f2b4a99cd4c215ce
-
-  //get "tag" value from dropdown list - 
-//   var tagVal = function() {
-//     var selectEl = document.querySelector("#quote-type")
-//     selectEl.addEventListener("change", function() {
-//     var tagEl = selectEl.textContent;
-//     return tagEl;
-//     });
-//     console.log(tagEl)
-//   }; tagVal();
-
-  //add "tag" value to end of URL to get quote from that "tag" value
-// var tagUrl = function () {
-// apiUrlquote.searchParams.append(tagEl);
-// var newUrl = apiUrlquote.toString();
-// }
-
-// fetch quote from API
 var getQuote = function() {
-var apiUrl = "https://api.quotable.io/random"
- 
+var apiUrl = "https://api.quotable.io/random";
   fetch(apiUrl).then(function(response) {
       if(response.ok) {
           response.json().then(function(data) {
@@ -102,7 +64,7 @@ var apiUrl = "https://api.quotable.io/random"
               addAuthor(data)
           })
       }
-  });
+  })
 };
 
   //display fetched quote and quote author 
@@ -124,4 +86,5 @@ var getData = function() {
     getQuote();
 }
 
+// event listeners
 formEl.addEventListener("submit", getData);
