@@ -5,6 +5,7 @@
     var selectFoodEl = document.querySelector("#select-food");
     var authorSpace = document.querySelector("#quote-author");
     var quoteSpace = document.querySelector("#quote");
+    var errorModal = document.getElementById("#error-modal");
     // var foodTypeInput = selectFoodEl.value;
 
 // materialize says we must initialize the select element for the dropdown list. 
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
   
         selectFoodEl.addEventListener("change", getFoodType)
+   
 
     // display random food image
     var displayImage = function(data) {
@@ -120,5 +122,14 @@ var getData = function() {
     getFoodImage();
     getQuote();
 }
+
+ // create modal that alerts user to select food type
+ if (getFoodType === "" || getQuote === "") {
+    console.log("error")
+    btn.onclick = function() {
+        errorModal.style.display = "block";
+}
+  }
+  
 
 formEl.addEventListener("submit", getData);
