@@ -29,7 +29,10 @@ header {
 }
 
 .container {
+	display: flex;
 	margin-top: 30px;
+	flex-direction: column;
+	justify-content: center;
 	flex: auto;
 	flex-shrink: calc();
 }
@@ -144,7 +147,6 @@ form {
 .form {
 	height: auto;
 	padding-bottom: 40px;
-	margin-top: 40px;
 	margin-bottom: 40px;
 }
 
@@ -153,7 +155,6 @@ form {
 	justify-items: center;
 	float: none;
 	width: 70vw;
-	border-radius: var(border-radius);
 }
 
 .options {
@@ -251,4 +252,61 @@ form {
 	color: var(--tertiary-dark);
 	border-color: var(--primary);
 	text-align: center;
+}
+
+/* On screens that are 992px or less */
+/* @media screen and (max-width: 775px) {
+	.title {
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.subtitle {
+		font-size: 2.25rem;
+		text-align: center;
+	} */
+
+/* } */
+
+/* On screens that are 485px or less */
+@media screen and (max-width: 485px) {
+	h1 {
+		font-size: 5rem;
+	}
+
+	h3 {
+		font-size: 3rem;
+	}
+
+	h4 {
+		font-size: 2rem;
+	}
+
+	h5 {
+		font-size: 2.5rem;
+	}
+
+	.more-button {
+		float: none;
+	}
+
+	.drop-title {
+		font-size: 2rem !important;
+	}
+	.header-title {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.subtitle {
+		font-size: 2.5rem;
+	}
+
+	.logo-1 {
+		display: none;
+	}
+
+	.submit-button {
+		left: 25%;
+	}
 }
