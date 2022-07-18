@@ -254,8 +254,15 @@ form {
 	text-align: center;
 }
 
-/* On screens that are 485px or less */
-@media screen and (max-width: 485px) {
+/* On screens that are 992 px or less */
+@media screen and (max-width: 992px) {
+	.card {
+		width: 85vw;
+	}
+}
+
+/* On screens that are 600px or less */
+@media screen and (max-width: 600px) {
 	h1 {
 		font-size: 5rem;
 	}
@@ -294,5 +301,39 @@ form {
 
 	.submit-button {
 		left: 25%;
+	}
+
+	.card {
+		width: 90vw;
+	}
+
+	.second-helping {
+		padding: 5px;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.transbox-green {
+		margin-bottom: 25px;
+	}
+
+	.header {
+		margin-top: 0;
+	}
+
+	.form {
+		padding-bottom: 20px;
+	}
+
+	.transbox-footer {
+		margin-bottom: 20px;
+	}
+
+	.page-footer {
+		padding-top: 0;
+	}
+
+	.container {
+		margin-top: 0;
 	}
 }
