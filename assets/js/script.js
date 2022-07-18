@@ -6,17 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems);
   });
 
-// //   var imageEl = document.querySelector
-//   var apiUrl = "https://api.quotable.io/random"
- 
-//     fetch(apiUrl).then(function(response) {
-//         if(response.ok) {
-//             response.json().then(function(data) {
-//                 console.log(data)
-//             })
-//         }
-//     });
-    // 
+// variables defined
     var formEl = document.querySelector("#form-box");
     var submitBtnEl = document.querySelector("#submit");
     var foodImageEl = document.querySelector("#food-image");
@@ -66,20 +56,20 @@ document.addEventListener('DOMContentLoaded', function() {
     formEl.addEventListener("submit", getFoodImage);
 
   //get "tag" value from dropdown list - 
-  var tagVal = function() {
-    var selectEl = document.querySelector("#quote-type")
-    selectEl.addEventListener("change",function() {
-    var tagEl = document.getElementById(selectEl).textContent;
-    return tagEl;
-    });
-    console.log(tagEl)
-  }; tagVal();
+//   var tagVal = function() {
+//     var selectEl = document.querySelector("#quote-type")
+//     selectEl.addEventListener("change", function() {
+//     var tagEl = selectEl.textContent;
+//     return tagEl;
+//     });
+//     console.log(tagEl)
+//   }; tagVal();
 
   //add "tag" value to end of URL to get quote from that "tag" value
-var tagUrl = function () {
-apiUrlquote.searchParams.append(tagEl);
-var newUrl = apiUrlquote.toString();
-}
+// var tagUrl = function () {
+// apiUrlquote.searchParams.append(tagEl);
+// var newUrl = apiUrlquote.toString();
+// }
 
 
 var apiUrl = "https://api.quotable.io/random"
@@ -94,12 +84,16 @@ var apiUrl = "https://api.quotable.io/random"
 
 
   //display author & content values in "quote-author" & "quote-content"
-  var addAuthor = function() {
+  var addAuthor = function(data) {
     var authorSpace = document.querySelector("#quote-author");
     var selectedAuthor = document.author.
     selectedAuthor.textContent = document.author.value;
+  }
     
-
+    var displayQuote = function(data) {
+        var randomImage = data.image;
+        console.log(randomImage);
+        foodImageEl.setAttribute("src", randomImage)
 
   }
   
