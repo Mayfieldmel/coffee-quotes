@@ -5,7 +5,7 @@
     var selectFoodEl = document.querySelector("#select-food");
     var authorSpace = document.querySelector("#quote-author");
     var quoteSpace = document.querySelector("#quote");
-    // var foodTypeInput = selectFoodEl.value;
+    var foodTypeInput 
 
 // materialize says we must initialize the select element for the dropdown list. 
 document.addEventListener('DOMContentLoaded', function() {
@@ -14,17 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
    // capture user food choice
-   var userVal= function() {
-    console.log("click"); }
-
-
-    // get food type
     var getFoodType = function() {
-        console.log(selectFoodEl)
-        console.log(event.target);
+       foodTypeInput = event.target.value.trim();
+        console.log(event.target.value);
         };
-  
-        selectFoodEl.addEventListener("change", getFoodType)
 
     // display random food image
     var displayImage = function(data) {
@@ -34,11 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // fetch food image from API
-    var getFoodImage = function(event) {
-        // console.log(foodTypeInput)
-        // var apiUrl = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
-        var apiUrl = "https://foodish-api.herokuapp.com/api/images/burger/"
-        fetch(apiUrl).then(function(response) {
+    var getFoodImage = function() {
+        console.log(foodTypeInput);
+        var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
+        fetch(foodApiUrl).then(function(response) {
             if(response.ok) {
                 response.json().then(function(data) {
                     console.log(data);
@@ -55,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
 var getQuote = function() {
-var apiUrl = "https://api.quotable.io/random";
-  fetch(apiUrl).then(function(response) {
+var quoteApiUrl = "https://api.quotable.io/random";
+  fetch(quoteApiUrl).then(function(response) {
       if(response.ok) {
           response.json().then(function(data) {
               console.log(data)
@@ -74,17 +66,18 @@ var displayQuote = function(data) {
         quoteSpace.textContent =  '"' + randomQuote + '"';
   }
   var addAuthor = function(data) {
-    var quoteAuthor = data.author
-    console.log(quoteAuthor)
+    var quoteAuthor = data.author;
+    console.log(quoteAuthor);
     authorSpace.textContent = quoteAuthor;
   };
 
 
-var getData = function() {
+var getData = function(event) {
     event.preventDefault();
-    getFoodImage();
+    getFoodImage(getFoodType);
     getQuote();
 }
 
 // event listeners
+selectFoodEl.addEventListener("change", getFoodType);
 formEl.addEventListener("submit", getData);
