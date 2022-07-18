@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
               apiLinkimage.searchParams.append(userEl);
             }
             
-    selectFoodEl.addEventListener("submit", userVal)
+    selectFoodEl.addEventListener("submit", getFoodImage)
 
     //   var quoteEl = document.querySelector
   var apiUrl = "https://api.quotable.io/random"
