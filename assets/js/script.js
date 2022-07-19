@@ -9,9 +9,7 @@ var quoteSpace = document.querySelector("#quote");
 var priorSearchesEl = document.querySelector("#prior-searches");
 var foodTypeInput 
 var quoteTypeInput
-var foodArr = [];
 var foodObj = {}
-var quoteArr = [];
 var quoteObj = {}
     
 // materialize says we must initialize the select element for the dropdown list. 
@@ -78,6 +76,7 @@ var getQuote = function() {
                   displayQuote(data);
                   displayAuthor(data);
                   saveQuote(quoteTypeInput, quoteApiUrl);
+                  displaySavedSearches();
               })
           }
       })
@@ -96,7 +95,6 @@ var getData = function(event) {
     event.preventDefault();
     getFoodImage(getFoodType);
     getQuote(getQuoteType);
-    // displaySavedSearches();
 }
     
    
@@ -106,7 +104,7 @@ function saveFood(foodType, foodUrl) {
         type: foodType,
         url: foodUrl
     };
-    localStorage.getItem("foodArr");
+    var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
     foodArr.push(foodObj);
     localStorage.setItem("foodArr", JSON.stringify(foodArr));
 };
@@ -117,7 +115,7 @@ function saveQuote(quoteTopic, quoteUrl) {
         type: quoteTopic,
         url: quoteUrl
     };
-    localStorage.getItem("quoteArr");
+    var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
     quoteArr.push(quoteObj);
     localStorage.setItem("quoteArr", JSON.stringify(quoteArr));
  
@@ -126,21 +124,21 @@ function saveQuote(quoteTopic, quoteUrl) {
 // display data from local storage
 var displaySavedSearches = function() {
      // create link
-    returnArr = localStorage.getItem("quoteArr");
-        console.log(returnArr);
+    var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
+    console.log(quoteArr);
      for (let i = 0; i < quoteArr.length; i++) {
-     var savedQuote = document.createElement("li");
+        var savedQuote = document.createElement("li");
         priorSearchesEl.appendChild(savedQuote);
-     var savedQuoteLink = document.createElement("a");
+        var savedQuoteLink = document.createElement("a");
         savedQuoteLink.textContent = quoteArr[i].type;
         savedQuoteLink.classList = "links";
         savedQuoteLink.setAttribute("href", "#")
         savedQuote.appendChild(savedQuoteLink);
     };
 
-    localStorage.getItem("foodArr");
+    var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
     for (let i = 0; i < foodArr.length; i++) {
-        savedQuoteLink.textContent += foodType;
+        // savedQuoteLink.textContent += foodType;
     };
 };
 
@@ -150,4 +148,4 @@ selectFoodEl.addEventListener("change", getFoodType);
 formEl.addEventListener("submit", getData);
 
 
-
+displaySavedSearches()
