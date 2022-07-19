@@ -28,11 +28,11 @@ header {
 	border-radius: var(--border-radius);
 }
 
-.container {
+.my-container {
 	display: flex;
 	margin-top: 30px;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	flex: auto;
 	flex-shrink: calc();
 }
@@ -64,6 +64,7 @@ h1 {
 	margin-bottom: 0;
 	color: var(--tertiary-dark);
 	text-align: center;
+	transform: scale(1.5);
 	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -253,11 +254,20 @@ form {
 	border-color: var(--primary);
 	text-align: center;
 }
-
+@media screen and (max-width: 1600px) {
+	h1 {
+		transform: none;
+	}
+}
 /* On screens that are 992 px or less */
 @media screen and (max-width: 992px) {
 	.card {
 		width: 85vw;
+	}
+	img.responsive-img,
+	video.responsive-video {
+		width: 150px;
+		max-width: none;
 	}
 }
 
@@ -289,6 +299,7 @@ form {
 	.header-title {
 		flex-direction: column;
 		flex-wrap: wrap;
+		width: 100%;
 	}
 
 	.subtitle {
@@ -335,5 +346,10 @@ form {
 
 	.container {
 		margin-top: 0;
+	}
+
+	.row .col.s9 {
+		width: none;
+		margin-left: 0;
 	}
 }
