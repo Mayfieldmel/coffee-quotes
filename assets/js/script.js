@@ -21,7 +21,11 @@ var instances = M.FormSelect.init(elems);
    // capture user food choice
     var getFoodType = function() {
        foodTypeInput = event.target.value.trim();
-        };
+    };
+
+    var getQuoteType = function() {
+        quoteTypeInput = event.target.value.trim();
+     };
 
     // display random food image
     var displayImage = function(data) {
@@ -32,40 +36,23 @@ var instances = M.FormSelect.init(elems);
 
     var getFoodImage = function(event) {
         console.log("click");
-        event.preventDefault();
         // console.log(foodTypeInput)
-        // var apiLink = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
-        var apiLink = "https://foodish-api.herokuapp.com/api/images/burger/"
-        fetch(apiLink).then(function(response) {
+        var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
+        fetch(foodApiUrl).then(function(response) {
+
 
             if(response.ok) {
                 response.json().then(function(data) {
                     displayImage(data);
                     saveFood(foodTypeInput, foodApiUrl);
                 })
-            } else {
-                alert('Error: ' + response.statusText);
-              }
+            }
         })
             .catch(function (error) {
               alert('Unable to connect to foodish database');
               console.log(error);
             })    
     };
-
-    
-          var userVal= function(){
-                var userEl = document.getElementById(selectFoodEl).value;
-                return userEl;
-              });
-          console.log(userEl)
-            }; userVal();
-
-            var tagLink =function () {
-              apiLinkimage.searchParams.append(userEl);
-            }
-            
-    selectFoodEl.addEventListener("submit", getFoodImage)
 
 
 //display fetched quote and quote author 
@@ -97,12 +84,12 @@ var getQuote = function() {
  
     
 // create modal that alerts user to select food type
-document.querySelector("#submit").addEventListener("click", function() {
-    if (foodTypeInput === "" || quoteTypeInput === "") {
-      console.log("error");
-      //document.getElementbyId("#error-modal").classList.remove("none");
-    }
-  });
+// document.querySelector("#submit").addEventListener("click", function() {
+//     if (foodTypeInput === "" || quoteTypeInput === "") {
+//       console.log("error");
+//       //document.getElementbyId("#error-modal").classList.remove("none");
+//     }
+//   });
 
 var getData = function(event) {
     event.preventDefault();
@@ -139,6 +126,7 @@ var displaySavedSearches = function() {
      // create link
     var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
     console.log(quoteArr);
+    priorSearchesEl.innerHTML = '';
      for (let i = 0; i < quoteArr.length; i++) {
         var savedQuote = document.createElement("li");
         priorSearchesEl.appendChild(savedQuote);
