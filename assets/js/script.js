@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // var tagUrl = function () {
 // apiUrlquote.searchParams.append(tagEl);
 // var newUrl = apiUrlquote.toString();
-// }
+// // }
           var userVal= function(){
                 var userEl = document.getElementById(selectFoodEl).value;
                 return userEl;
@@ -124,12 +124,12 @@ var getData = function() {
 }
 
  // create modal that alerts user to select food type
- if (getFoodType === "" || getQuote === "") {
+ document.querySelector("#show-error-modal").addEventListener("click", function() {
+  if (getFoodType === "" || getQuote === "") {
     console.log("error")
-    btn.onclick = function() {
-        errorModal.style.display = "block";
-}
   }
+});
+
   
 
 formEl.addEventListener("submit", getData);
