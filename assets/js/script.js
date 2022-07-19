@@ -71,7 +71,6 @@ var displayAuthor = function(data) {
 
 //   fetch quote from API
 var getQuote = function() {
-    console.log(quoteTypeInput);
     var quoteApiUrl = "https://api.quotable.io/random?tags=" + quoteTypeInput;
       fetch(quoteApiUrl).then(function(response) {
           if(response.ok) {
@@ -89,19 +88,9 @@ var getData = function(event) {
     event.preventDefault();
     getFoodImage(getFoodType);
     getQuote(getQuoteType);
+    // displaySavedSearches();
 }
-
-
-// save search links
-
-    // create link
-    // var priorMeal = document.createElement("li");
-    //     priorSearchesEl.appendChild(priorMeal);
-    // var priorMealLink = document.createElement("a");
-    //     priorMealLink.textContent = getFoodType + getQuoteType;
-    //     priorMealLink.classList = "links";
-    //     priorMealLink.setAttribute("href", "#")
-    //     priorMeal.appendChild(priorMealLink);
+    
    
 // store food data in local storage
 function saveFood(foodType, foodUrl) {
@@ -110,13 +99,10 @@ function saveFood(foodType, foodUrl) {
         url: foodUrl
     };
     localStorage.getItem("foodArr");
-    if(!foodArr) {
-        localStorage.setItem("foodArr", foodObj);
-    } else {
-        foodArr.push(foodObj);
-        localStorage.setItem("foodArr", JSON.stringify(foodArr));
-    }
+    foodArr.push(foodObj);
+    localStorage.setItem("foodArr", JSON.stringify(foodArr));
 };
+
 // store quote data in local storage
 function saveQuote(quoteTopic, quoteUrl) {
     quoteObj = {
@@ -124,29 +110,31 @@ function saveQuote(quoteTopic, quoteUrl) {
         url: quoteUrl
     };
     localStorage.getItem("quoteArr");
-    if(!quoteArr) {
-        localStorage.setItem("quoteArr", quoteObj);
-    } else {
-        quoteArr.push(quoteObj);
-        localStorage.setItem("quoteArr", JSON.stringify(quoteArr));
-    }
+    quoteArr.push(quoteObj);
+    localStorage.setItem("quoteArr", JSON.stringify(quoteArr));
+ 
 };
 
-// weather dashboard code:  // display data from local storage
-// var displaySavedSearches = function() {
-//     var cityHistoryStr = localStorage.getItem("city");
-//     if(cityHistoryStr) {
-//         cityHistoryArr = cityHistoryStr.split(",");
-//         console.log(cityHistoryArr);
-//         // display btn for each saved search
-//         for (let i = 0; i < cityHistoryArr.length; i++) {
-//             var searchHistoryBtn = document.createElement("button");
-//             searchHistoryBtn.textContent = cityHistoryArr[i];
-//             searchHistoryBtn.classList = "btn";
-//             searchHistoryEl.appendChild(searchHistoryBtn);
-//         }
-//     } else {};
-// }
+// display data from local storage
+var displaySavedSearches = function() {
+     // create link
+    returnArr = localStorage.getItem("quoteArr");
+        console.log(returnArr);
+     for (let i = 0; i < quoteArr.length; i++) {
+     var savedQuote = document.createElement("li");
+        priorSearchesEl.appendChild(savedQuote);
+     var savedQuoteLink = document.createElement("a");
+        savedQuoteLink.textContent = quoteArr[i].type;
+        savedQuoteLink.classList = "links";
+        savedQuoteLink.setAttribute("href", "#")
+        savedQuote.appendChild(savedQuoteLink);
+    };
+
+    localStorage.getItem("foodArr");
+    for (let i = 0; i < foodArr.length; i++) {
+        savedQuoteLink.textContent += foodType;
+    };
+};
 
 // event listeners
 quoteTypeEl.addEventListener("change", getQuoteType)
