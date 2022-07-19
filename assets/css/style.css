@@ -254,6 +254,10 @@ form {
 	text-align: center;
 }
 
+.none {
+	display: none;
+}
+
 /* On screens that are 992px or less */
 /* @media screen and (max-width: 775px) {
 	.title {
