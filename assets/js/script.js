@@ -27,11 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
         foodImageEl.setAttribute("src", randomImage)
     }
     
-    // fetch food image from API
-    var getFoodImage = function() {
-        console.log(foodTypeInput);
-        var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
-        fetch(foodApiUrl).then(function(response) {
+
+    var getFoodImage = function(event) {
+        console.log("click");
+        event.preventDefault();
+        // console.log(foodTypeInput)
+        // var apiLink = "https://foodish-api.herokuapp.com/images/api" + foodTypeInput + "/";
+        var apiLink = "https://foodish-api.herokuapp.com/api/images/burger/"
+        fetch(apiLink).then(function(response) {
+
             if(response.ok) {
                 response.json().then(function(data) {
                     console.log(data);
@@ -47,11 +51,20 @@ document.addEventListener('DOMContentLoaded', function() {
             })    
     };
 
-//capture quote topic
-var getQuoteType = function()  {
-    quoteTypeInput = event.target.value.trim();
-        console.log(quoteTypeInput);
-};
+    
+          var userVal= function(){
+                var userEl = document.getElementById(selectFoodEl).value;
+                return userEl;
+              });
+          console.log(userEl)
+            }; userVal();
+
+            var tagLink =function () {
+              apiLinkimage.searchParams.append(userEl);
+            }
+            
+    selectFoodEl.addEventListener("submit", getFoodImage)
+
 
 //display fetched quote and quote author 
 var displayQuote = function(data) {
