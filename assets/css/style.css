@@ -253,14 +253,18 @@ form {
 	border-color: var(--primary);
 	text-align: center;
 }
+.none {
+	display: none;
+};
 
 /* On screens that are 992 px or less */
 @media screen and (max-width: 992px) {
 	.card {
 		width: 85vw;
-	}.none {
+	}
+	.none {
 	display: none;
-}
+	}
 }
 /* On screens that are 992px or less */
 /* @media screen and (max-width: 775px) {
