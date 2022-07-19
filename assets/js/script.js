@@ -21,7 +21,11 @@ var instances = M.FormSelect.init(elems);
    // capture user food choice
     var getFoodType = function() {
        foodTypeInput = event.target.value.trim();
-        };
+    };
+
+    var getQuoteType = function() {
+        quoteTypeInput = event.target.value.trim();
+     };
 
     // display random food image
     var displayImage = function(data) {
@@ -29,19 +33,19 @@ var instances = M.FormSelect.init(elems);
         foodImageEl.setAttribute("src", randomImage)
     }
     
-    // fetch food image from API
-    var getFoodImage = function() {
-        console.log(foodTypeInput);
+
+    var getFoodImage = function(event) {
+        console.log("click");
+        // console.log(foodTypeInput)
         var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
         fetch(foodApiUrl).then(function(response) {
+
             if(response.ok) {
                 response.json().then(function(data) {
                     displayImage(data);
                     saveFood(foodTypeInput, foodApiUrl);
                 })
-            } else {
-                alert('Error: ' + response.statusText);
-              }
+            }
         })
             .catch(function (error) {
               alert('Unable to connect to foodish database');
@@ -49,11 +53,9 @@ var instances = M.FormSelect.init(elems);
             })    
     };
 
-//capture quote topic
-var getQuoteType = function()  {
-    quoteTypeInput = event.target.value.trim();
-        console.log(quoteTypeInput);
-};
+    
+
+
 
 //display fetched quote and quote author 
 var displayQuote = function(data) {
@@ -84,12 +86,12 @@ var getQuote = function() {
  
     
 // create modal that alerts user to select food type
-document.querySelector("#submit").addEventListener("click", function() {
-    if (foodTypeInput === "" || quoteTypeInput === "") {
-      console.log("error");
-      //document.getElementbyId("#error-modal").classList.remove("none");
-    }
-  });
+// document.querySelector("#submit").addEventListener("click", function() {
+//     if (foodTypeInput === "" || quoteTypeInput === "") {
+//       console.log("error");
+//       //document.getElementbyId("#error-modal").classList.remove("none");
+//     }
+//   });
 
 var getData = function(event) {
     event.preventDefault();
@@ -126,6 +128,7 @@ var displaySavedSearches = function() {
      // create link
     var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
     console.log(quoteArr);
+    priorSearchesEl.innerHTML = '';
      for (let i = 0; i < quoteArr.length; i++) {
         var savedQuote = document.createElement("li");
         priorSearchesEl.appendChild(savedQuote);
