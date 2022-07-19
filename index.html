@@ -55,7 +55,7 @@
 							<option class="options" value="wisdom">Wisdom</option>
 							<option class="options" value="success">Success</option>
 							<option class="options" value="happiness">Happiness</option>
-							<option class="options" value="inspiration">Inspiration</option>
+							<option class="options" value="inspirational">Inspirational</option>
 							<option class="options" value="love">Love</option>
 							<option class="options" value="pain">Pain</option>
 							<option class="options" value="humor">Humor</option>
@@ -75,6 +75,14 @@
 							<option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
 						</select>
 					</div>
+<!--Error Modal-->
+<div id="error-modal" class="none">
+	<div>
+	  <span>MESS IN THE KITCHEN</span>
+	  <p>Looks Like You Don't Have All Your Ingredients. Please Select Both a Quote & a Food Type!</p>
+	  <button>Try Again</button>
+	</div>
+  </div>
 				<!-- SUBMIT BUTTON -->
 					<button
 						id="submit"
@@ -123,19 +131,8 @@
 							<h5>Order Again!</h5>
 						</div>
 						<div class="col l4 offset-l2 s12">
-							<ul>
-								<li>
-									<a class="links" href="#!">Link 1</a>
-								</li>
-								<li>
-									<a class="links" href="#!">Link 2</a>
-								</li>
-								<li>
-									<a class="links" href="#!">Link 3</a>
-								</li>
-								<li>
-									<a class="links" href="#!">Link 4</a>
-								</li>
+							<ul id="prior-searches">
+								<!-- dynamically make saved searches links -->
 							</ul>
 						</div>
 					</div>

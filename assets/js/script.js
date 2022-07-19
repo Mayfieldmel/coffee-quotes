@@ -1,19 +1,24 @@
 // variables defined
-    var formEl = document.querySelector("#form-box");
-    var submitBtnEl = document.querySelector("#submit");
-    var foodImageEl = document.querySelector("#food-image");
-    var quoteTypeEl = document.querySelector("#quote-type");
-    var selectFoodEl = document.querySelector("#select-food");
-    var authorSpace = document.querySelector("#quote-author");
-    var quoteSpace = document.querySelector("#quote");
-    var foodTypeInput 
-    var quoteTypeInput
-
+var formEl = document.querySelector("#form-box");
+var submitBtnEl = document.querySelector("#submit");
+var foodImageEl = document.querySelector("#food-image");
+var quoteTypeEl = document.querySelector("#quote-type");
+var selectFoodEl = document.querySelector("#select-food");
+var authorSpace = document.querySelector("#quote-author");
+var quoteSpace = document.querySelector("#quote");
+var priorSearchesEl = document.querySelector("#prior-searches");
+var foodTypeInput 
+var quoteTypeInput
+var foodArr = [];
+var foodObj = {}
+var quoteArr = [];
+var quoteObj = {}
+    
 // materialize says we must initialize the select element for the dropdown list. 
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-  });
+var elems = document.querySelectorAll('select');
+var instances = M.FormSelect.init(elems);
+});
 
    // capture user food choice
     var getFoodType = function() {
@@ -23,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // display random food image
     var displayImage = function(data) {
         var randomImage = data.image;
-        console.log(randomImage);
         foodImageEl.setAttribute("src", randomImage)
     }
     
@@ -38,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if(response.ok) {
                 response.json().then(function(data) {
-                    console.log(data);
                     displayImage(data);
+                    saveFood(foodTypeInput, foodApiUrl);
                 })
             } else {
                 alert('Error: ' + response.statusText);
@@ -80,26 +84,83 @@ var displayAuthor = function(data) {
 
 //   fetch quote from API
 var getQuote = function() {
-    console.log(quoteTypeInput);
     var quoteApiUrl = "https://api.quotable.io/random?tags=" + quoteTypeInput;
       fetch(quoteApiUrl).then(function(response) {
           if(response.ok) {
               response.json().then(function(data) {
                   displayQuote(data);
-                  displayAuthor(data)
+                  displayAuthor(data);
+                  saveQuote(quoteTypeInput, quoteApiUrl);
               })
           }
       })
     };
+ 
     
+// create modal that alerts user to select food type
+document.querySelector("#submit").addEventListener("click", function() {
+    if (foodTypeInput === "" || quoteTypeInput === "") {
+      console.log("error");
+      //document.getElementbyId("#error-modal").classList.remove("none");
+    }
+  });
 
 var getData = function(event) {
     event.preventDefault();
     getFoodImage(getFoodType);
     getQuote(getQuoteType);
+    // displaySavedSearches();
 }
+    
+   
+// store food data in local storage
+function saveFood(foodType, foodUrl) {
+    foodObj = {
+        type: foodType,
+        url: foodUrl
+    };
+    localStorage.getItem("foodArr");
+    foodArr.push(foodObj);
+    localStorage.setItem("foodArr", JSON.stringify(foodArr));
+};
+
+// store quote data in local storage
+function saveQuote(quoteTopic, quoteUrl) {
+    quoteObj = {
+        type: quoteTopic,
+        url: quoteUrl
+    };
+    localStorage.getItem("quoteArr");
+    quoteArr.push(quoteObj);
+    localStorage.setItem("quoteArr", JSON.stringify(quoteArr));
+ 
+};
+
+// display data from local storage
+var displaySavedSearches = function() {
+     // create link
+    returnArr = localStorage.getItem("quoteArr");
+        console.log(returnArr);
+     for (let i = 0; i < quoteArr.length; i++) {
+     var savedQuote = document.createElement("li");
+        priorSearchesEl.appendChild(savedQuote);
+     var savedQuoteLink = document.createElement("a");
+        savedQuoteLink.textContent = quoteArr[i].type;
+        savedQuoteLink.classList = "links";
+        savedQuoteLink.setAttribute("href", "#")
+        savedQuote.appendChild(savedQuoteLink);
+    };
+
+    localStorage.getItem("foodArr");
+    for (let i = 0; i < foodArr.length; i++) {
+        savedQuoteLink.textContent += foodType;
+    };
+};
 
 // event listeners
 quoteTypeEl.addEventListener("change", getQuoteType)
 selectFoodEl.addEventListener("change", getFoodType);
 formEl.addEventListener("submit", getData);
+
+
+
