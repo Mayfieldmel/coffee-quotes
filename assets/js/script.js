@@ -40,6 +40,7 @@ var instances = M.FormSelect.init(elems);
         var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
         fetch(foodApiUrl).then(function(response) {
 
+
             if(response.ok) {
                 response.json().then(function(data) {
                     displayImage(data);
@@ -52,9 +53,6 @@ var instances = M.FormSelect.init(elems);
               console.log(error);
             })    
     };
-
-    
-
 
 
 //display fetched quote and quote author 
