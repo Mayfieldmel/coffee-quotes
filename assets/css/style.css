@@ -254,22 +254,19 @@ form {
 	text-align: center;
 }
 
-<<<<<<< HEAD
 /* On screens that are 992 px or less */
 @media screen and (max-width: 992px) {
 	.card {
 		width: 85vw;
-=======
-.none {
+	}.none {
 	display: none;
 }
-
+}
 /* On screens that are 992px or less */
 /* @media screen and (max-width: 775px) {
 	.title {
 		font-size: 50px;
 		text-align: center;
->>>>>>> 6f514ff29923761a7aa726e912d35b9d59bee3f8
 	}
 }
 
