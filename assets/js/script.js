@@ -16,9 +16,9 @@ var quoteObj = {}
     
 // materialize says we must initialize the select element for the dropdown list. 
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-  });
+var elems = document.querySelectorAll('select');
+var instances = M.FormSelect.init(elems);
+});
 
    // capture user food choice
     var getFoodType = function() {
@@ -82,7 +82,15 @@ var getQuote = function() {
           }
       })
     };
+ 
     
+// create modal that alerts user to select food type
+document.querySelector("#submit").addEventListener("click", function() {
+    if (foodTypeInput === "" || quoteTypeInput === "") {
+      console.log("error");
+      //document.getElementbyId("#error-modal").classList.remove("none");
+    }
+  });
 
 var getData = function(event) {
     event.preventDefault();
