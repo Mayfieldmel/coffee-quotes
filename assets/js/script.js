@@ -1,4 +1,5 @@
 // variables defined
+console.log('script')
 var formEl = document.querySelector("#form-box");
 var submitBtnEl = document.querySelector("#submit");
 var foodImageEl = document.querySelector("#food-image");
@@ -70,6 +71,7 @@ var displayAuthor = function(data) {
 //   fetch quote from API
 var getQuote = function() {
     var quoteApiUrl = "https://api.quotable.io/random?tags=" + quoteTypeInput;
+    console.log(quoteTypeInput)
       fetch(quoteApiUrl).then(function(response) {
           if(response.ok) {
               response.json().then(function(data) {

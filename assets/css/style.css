@@ -254,38 +254,20 @@ form {
 	border-color: var(--primary);
 	text-align: center;
 }
-
-.none {
-	display: none;
-};
-
 @media screen and (max-width: 1600px) {
 	h1 {
 		transform: none;
 	}
 }
-
 /* On screens that are 992 px or less */
 @media screen and (max-width: 992px) {
 	.card {
 		width: 85vw;
 	}
-
-	.none {
-	display: none;
-	}
-}
-/* On screens that are 992px or less */
-/* @media screen and (max-width: 775px) {
-	.title {
-		font-size: 50px;
-		text-align: center;
-=======
 	img.responsive-img,
 	video.responsive-video {
 		width: 150px;
 		max-width: none;
-
 	}
 }
 
