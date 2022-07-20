@@ -30,7 +30,7 @@ var instances = M.FormSelect.init(elems);
     // display random food image
     var displayImage = function(data) {
         var randomImage = data.image;
-        foodImageEl.setAttribute("src", randomImage)
+        foodImageEl.setAttribute("src", randomImage);
     }
     
 
@@ -131,7 +131,7 @@ var displaySavedSearches = function() {
         var savedQuote = document.createElement("li");
         priorSearchesEl.appendChild(savedQuote);
         var savedQuoteLink = document.createElement("a");
-        savedQuoteLink.textContent = quoteArr[i].type;
+        savedQuoteLink.textContent = quoteArr[i].type + "/";
         savedQuoteLink.classList = "links";
         savedQuoteLink.setAttribute("href", "#")
         savedQuote.appendChild(savedQuoteLink);
@@ -139,8 +139,11 @@ var displaySavedSearches = function() {
 
     var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
     for (let i = 0; i < foodArr.length; i++) {
-        // savedQuoteLink.textContent += foodType;
+        savedQuoteLink.textContent += foodArr[i].type;
     };
+
+    // var priorSearch = function() {}
+    // savedQuote.addEventListener("click", priorSearch)
 };
 
 // event listeners
