@@ -142,8 +142,14 @@ var displaySavedSearches = function() {
         savedQuoteLink.textContent += foodArr[i].type;
     };
 
-    // var priorSearch = function() {}
-    // savedQuote.addEventListener("click", priorSearch)
+    var priorSearch = function() {
+        console.log(event.target)
+        // quoteApiUrl = quoteArr[i].url;
+        // foodApiUrl = foodArr[i].url;
+        // getQuote(quoteApiUrl)
+        // getFoodImage(foodApiUrl)
+    }
+    savedQuote.addEventListener("click", priorSearch)
 };
 
 // event listeners
