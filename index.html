@@ -23,8 +23,8 @@
 	</head>
 	<body>
 		<!-- materialize recommended enclosing all page content in a container div -->
-    <div class="my-container container col s12">
-		<!-- header start -->
+		<div class="my-container container col s12">
+			<!-- header start -->
 			<header class="transbox-green">
 				<div class="header-title row">
 					<span class="icon-box col s3">
@@ -37,17 +37,16 @@
 					<div class="col s3"></div>
 					<h2 class="subtitle col s9">"Feed your brain and your soul!"</h2>
 				</div>
-
 			</header>
-		<!-- header end -->
-		<!-- main body start -->
+			<!-- header end -->
+			<!-- main body start -->
 			<main class="col s12">
 				<!-- form start -->
 				<form id="form-box" class="form transbox-footer">
 					<h3 class="main-title">What sounds good?</h3>
 					<!-- quote dropdown menu -->
 					<div class="drop-title input-field col s12">
-						<select id="quote-type"  class="transparent browser-default">
+						<select id="quote-type" class="transparent browser-default">
 							<option class="option-head" value="" disabled selected>
 								TOPICS: Choose One!
 							</option>
@@ -55,7 +54,9 @@
 							<option class="options" value="wisdom">Wisdom</option>
 							<option class="options" value="success">Success</option>
 							<option class="options" value="happiness">Happiness</option>
-							<option class="options" value="inspirational">Inspirational</option>
+							<option class="options" value="inspirational">
+								Inspirational
+							</option>
 							<option class="options" value="love">Love</option>
 							<option class="options" value="pain">Pain</option>
 							<option class="options" value="humor">Humor</option>
@@ -67,15 +68,51 @@
 							<option class="option-head" value="" disabled selected>
 								FOODS: Choose One!
 							</option>
-							<option value="pizza" data-icon="./assets/images/pizza-icon.jpg">Pizza</option>
-							<option value="dessert" data-icon="./assets/images/desert-icon.jpg">Dessert</option>
-							<option value="pasta" data-icon="./assets/images/pasta-icon.jpg">Pasta</option>
-							<option value="burger" data-icon="./assets/images/burger-icon.jpg">Burger</option>
-							<option value="butter-chicken" data-icon="./assets/images/chicken-icon.jpg">Chicken</option>
-							<option value="rice" data-icon="./assets/images/rice-icon.jpg">Rice</option>
+							<option
+								class="options"
+								value="pizza"
+								data-icon="./assets/images/pizza-icon.jpg"
+							>
+								Pizza
+							</option>
+							<option
+								class="options"
+								value="dessert"
+								data-icon="./assets/images/desert-icon.jpg"
+							>
+								Dessert
+							</option>
+							<option
+								class="options"
+								value="pasta"
+								data-icon="./assets/images/pasta-icon.jpg"
+							>
+								Pasta
+							</option>
+							<option
+								class="options"
+								value="burger"
+								data-icon="./assets/images/burger-icon.jpg"
+							>
+								Burger
+							</option>
+							<option
+								class="options"
+								value="butter-chicken"
+								data-icon="./assets/images/chicken-icon.jpg"
+							>
+								Chicken
+							</option>
+							<option
+								class="options"
+								value="rice"
+								data-icon="./assets/images/rice-icon.jpg"
+							>
+								Rice
+							</option>
 						</select>
 					</div>
-				<!-- SUBMIT BUTTON -->
+					<!-- SUBMIT BUTTON -->
 					<button
 						id="submit"
 						class="submit-button btn"
@@ -89,25 +126,29 @@
 				<!-- form end -->
 				<!-- return of search-->
 				<div class="row">
-					<div class="col s12 m7">
+					<div class="quote-pic col s12">
 						<div class="card">
 							<!-- FOOD IMAGE -->
-							<div class="card-image return-image">
-								<img id="food-image" src="assets/images/ice-cream-410330_1280.jpg" />
+							<div class="card-image return-image col s12 m6">
+								<img
+									id="food-image"
+									src="assets/images/ice-cream-410330_1280.jpg"
+								/>
 							</div>
 							<!-- QUOTE -->
-							<div class="card-content">
-								<span id="quote" class="card-title">Quote</span>
-								<p id="quote-author">Quote Author</p>
+							<div class="card-content col s12 m6">
+								<span id="quote" class="card-title"
+									>Words of Wisdom<br />
+									coming up!</span
+								>
+								<p id="quote-author"></p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- go back/try again button -->
 				<div class="row second-helping transbox-green">
-					<h4>
-						Still hungry? How about a second serving?
-					</h4>
+					<h4>Still hungry? How about a second serving?</h4>
 					<div>
 						<a class="more-button btn-floating btn-large">
 							<i class="material-icons">add</i>
@@ -115,27 +156,29 @@
 					</div>
 				</div>
 			</main>
-		<!-- main body end -->
-		<!-- Footer -->
+			<!-- main body end -->
+			<!-- Footer -->
 			<footer class="col s12">
-					<div class="row page-footer transbox-footer">
-						<div class="col l6 s12">
-							<h5>Order Again!</h5>
-						</div>
-						<div class="col l4 offset-l2 s12">
-							<ul id="prior-searches">
-							</ul>
-						</div>
+				<div class="page-footer transbox-footer">
+					<div class="col l6 s12">
+						<h5>Order Again!</h5>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<ul id="prior-searches"></ul>
 					</div>
 				</div>
+
 				<div>
 					<div class="container footer-copyright transbox">
-						Contributions with ❤️  by: <br />
+						Contributions with ❤️ by: <br />
 						Christina DuWors, Danielle Locklear, Melissa Mayfield,
-            <br/> Zach Odachowski, & Jayden Tripp.<br/><br/>
-			<a href="https://www.vecteezy.com/free-vector/human">Title Image Courtesy of Human Vectors by Vecteezy</a>
+						<br />
+						Zach Odachowski, & Jayden Tripp.<br /><br />
+						<a href="https://www.vecteezy.com/free-vector/human"
+							>Title Image Courtesy of Human Vectors by Vecteezy</a
+						>
 					</div>
-					
+				</div>
 			</footer>
 		</div>
 		<!-- not sure if we need the js materialize link but included it just incase -->
