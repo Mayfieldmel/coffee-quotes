@@ -1,4 +1,5 @@
 // variables defined
+console.log('script')
 var formEl = document.querySelector("#form-box");
 var submitBtnEl = document.querySelector("#submit");
 var foodImageEl = document.querySelector("#food-image");
@@ -6,6 +7,7 @@ var quoteTypeEl = document.querySelector("#quote-type");
 var selectFoodEl = document.querySelector("#select-food");
 var authorSpace = document.querySelector("#quote-author");
 var quoteSpace = document.querySelector("#quote");
+var secondServingBtn = document.querySelector("#second-serving");
 var priorSearchesEl = document.querySelector("#prior-searches");
 var foodTypeInput 
 var quoteTypeInput
@@ -30,7 +32,7 @@ var instances = M.FormSelect.init(elems);
     // display random food image
     var displayImage = function(data) {
         var randomImage = data.image;
-        foodImageEl.setAttribute("src", randomImage)
+        foodImageEl.setAttribute("src", randomImage);
     }
     
 
@@ -70,6 +72,7 @@ var displayAuthor = function(data) {
 //   fetch quote from API
 var getQuote = function() {
     var quoteApiUrl = "https://api.quotable.io/random?tags=" + quoteTypeInput;
+    console.log(quoteTypeInput)
       fetch(quoteApiUrl).then(function(response) {
           if(response.ok) {
               response.json().then(function(data) {
@@ -123,30 +126,31 @@ function saveQuote(quoteTopic, quoteUrl) {
 
 // display data from local storage
 var displaySavedSearches = function() {
-     // create link
+    var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
     var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
     console.log(quoteArr);
     priorSearchesEl.innerHTML = '';
-     for (let i = 0; i < quoteArr.length; i++) {
+    // loop through both arrays to create hyperlinks
+     quoteArr.forEach((type1, index) => {
+        const type2 = foodArr[index];
         var savedQuote = document.createElement("li");
         priorSearchesEl.appendChild(savedQuote);
         var savedQuoteLink = document.createElement("a");
-        savedQuoteLink.textContent = quoteArr[i].type;
+        savedQuoteLink.textContent = type1.type + "/" + type2.type;
         savedQuoteLink.classList = "links";
         savedQuoteLink.setAttribute("href", "#")
         savedQuote.appendChild(savedQuoteLink);
-    };
-
-    var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
-    for (let i = 0; i < foodArr.length; i++) {
-        // savedQuoteLink.textContent += foodType;
-    };
+    });
+    // var priorSearch = function() {}
+    // savedQuote.addEventListener("click", priorSearch)
 };
 
 // event listeners
 quoteTypeEl.addEventListener("change", getQuoteType)
 selectFoodEl.addEventListener("change", getFoodType);
 formEl.addEventListener("submit", getData);
-
+secondServingBtn.addEventListener("click", function() {
+    location.reload();
+})
 
 displaySavedSearches()
