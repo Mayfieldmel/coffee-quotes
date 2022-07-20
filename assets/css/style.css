@@ -18,6 +18,7 @@ body {
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
+	width: 100vw;
 }
 
 header {
@@ -224,6 +225,7 @@ form {
 	color: var(--tertiary-dark);
 	font-family: "Caveat", cursive;
 	font-size: 30px;
+	/* margin: 0px 40px; */
 	text-align: center;
 	border-radius: var(--border-radius);
 }
@@ -275,29 +277,6 @@ form {
 	border-color: var(--primary);
 	text-align: center;
 }
-
-.none {
-	display: none;
-	position: fixed;
-	font-size: 20px;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: white;
-	text-align: center;
-	border: 10px;
-	border-radius: 1px solid black;
-};
-
-.none span {
-	font-weight: 505;
-};
-
-button:hover {
-	color: var(--tertiary-light);
-	background-color: var(--tertiary-dark);
-};
-
 @media screen and (max-width: 1600px) {
 	h1 {
 		transform: none;
