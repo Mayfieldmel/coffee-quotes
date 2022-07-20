@@ -88,7 +88,7 @@ h4 {
 }
 
 h5 {
-	font-size: 3.65rem;
+	font-size: 4rem;
 }
 
 .drop-title {
@@ -114,8 +114,12 @@ form {
 
 .option-head {
 	font-family: "Caveat", cursive;
-	font-size: 5rem;
+	font-size: 2.5rem;
 	font-weight: bolder;
+}
+
+.options {
+	font-size: 2rem;
 }
 
 .submit-button {
@@ -152,10 +156,26 @@ form {
 }
 
 .card {
-	border: solid 10px var(--tertiary-light);
 	justify-items: center;
 	float: none;
 	width: 70vw;
+	height: auto;
+	display: flex;
+}
+
+.card-image {
+	border: solid 10px var(--tertiary-light);
+	background-color: var(--tertiary-light);
+	/* border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px; */
+	object-fit: cover;
+}
+
+.card-content {
+	background-color: #ffffff;
+	/* border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px; */
+	flex: 1;
 }
 
 .options {
@@ -271,7 +291,16 @@ form {
 	}
 }
 
-/* On screens that are 600px or less */
+/* On screens that are 750px or less */
+@media screen and (max-width: 750px) {
+	.second-helping {
+		padding: 5px;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+/* On screens that are 6000px or less */
 @media screen and (max-width: 600px) {
 	h1 {
 		font-size: 5rem;
@@ -311,17 +340,11 @@ form {
 	}
 
 	.submit-button {
-		left: 25%;
+		left: 35%;
 	}
 
 	.card {
 		width: 90vw;
-	}
-
-	.second-helping {
-		padding: 5px;
-		flex-direction: column;
-		justify-content: center;
 	}
 
 	.transbox-green {
