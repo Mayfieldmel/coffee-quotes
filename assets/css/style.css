@@ -277,6 +277,29 @@ form {
 	border-color: var(--primary);
 	text-align: center;
 }
+
+.none {
+	display: none;
+}
+
+.modals {
+	display: block;
+	position: fixed;
+	font-size: 20px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: white;
+	text-align: center;
+	border: 10px;
+	border-radius: 1px solid black;
+	z-index: 7;
+};
+
+.modals span {
+	font-weight: 40px;
+};
+
 @media screen and (max-width: 1600px) {
 	h1 {
 		transform: none;
