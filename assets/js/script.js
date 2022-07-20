@@ -71,6 +71,18 @@ var getQuote = function() {
 // get food and quote data & display on page upon "submit"
 var getData = function(event) {
     event.preventDefault();
+    if(!foodTypeInput || !quoteTypeInput) {
+        console.log("error");
+        var modal = document.querySelector("#error-modal");
+            modal.classList.remove("none");
+            modal.classList = "modals"
+            console.log(modal.classList)
+        var modalBtn = document.getElementById("error-modal-btn");
+            modalBtn.addEventListener("click", function() { 
+            location.reload()
+            })
+        return
+      };
     getFoodImage(getFoodType);
     getQuote(getQuoteType);
 }   
@@ -138,3 +150,4 @@ secondServingBtn.addEventListener("click", function() {
 
 // display saved searches on page load
 displaySavedSearches()
+
