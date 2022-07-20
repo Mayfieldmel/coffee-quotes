@@ -1,5 +1,4 @@
 // variables defined
-console.log('script')
 var formEl = document.querySelector("#form-box");
 var submitBtnEl = document.querySelector("#submit");
 var foodImageEl = document.querySelector("#food-image");
@@ -9,6 +8,7 @@ var authorSpace = document.querySelector("#quote-author");
 var quoteSpace = document.querySelector("#quote");
 var secondServingBtn = document.querySelector("#second-serving");
 var priorSearchesEl = document.querySelector("#prior-searches");
+var priorSearchList = document.querySelector("#prior-search-list");
 var foodTypeInput 
 var quoteTypeInput
 var foodObj = {}
@@ -24,50 +24,31 @@ var instances = M.FormSelect.init(elems);
     var getFoodType = function() {
        foodTypeInput = event.target.value.trim();
     };
+    
+    // fetch and display food image
+    var getFoodImage = function(event) {
+        // console.log(foodTypeInput)
+        var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
+        fetch(foodApiUrl).then(function(response) {
+            if(response.ok) {
+                response.json().then(function(data) {
+                    // display random food image
+                    var randomImage = data.image;
+                    foodImageEl.setAttribute("src", randomImage);
+                    // save food type and image
+                    saveFood(foodTypeInput, randomImage);
+                    console.log(foodTypeInput, randomImage);
+                })
+            }
+        })   
+    };
 
+// capture user quote topic
     var getQuoteType = function() {
         quoteTypeInput = event.target.value.trim();
      };
 
-    // display random food image
-    var displayImage = function(data) {
-        var randomImage = data.image;
-        foodImageEl.setAttribute("src", randomImage);
-    }
-    
 
-    var getFoodImage = function(event) {
-        console.log("click");
-        // console.log(foodTypeInput)
-        var foodApiUrl = "https://foodish-api.herokuapp.com/api/images/" + foodTypeInput + "/";
-        fetch(foodApiUrl).then(function(response) {
-
-
-            if(response.ok) {
-                response.json().then(function(data) {
-                    displayImage(data);
-                    saveFood(foodTypeInput, foodApiUrl);
-                })
-            }
-        })
-            .catch(function (error) {
-              alert('Unable to connect to foodish database');
-              console.log(error);
-            })    
-    };
-
-
-//display fetched quote and quote author 
-var displayQuote = function(data) {
-    var randomQuote = data.content;
-    console.log(randomQuote); 
-    quoteSpace.textContent =  '"' + randomQuote + '"';
-  };
-var displayAuthor = function(data) {
-    var quoteAuthor = data.author;
-    console.log(quoteAuthor);
-    authorSpace.textContent = quoteAuthor;
-  };
 
 //   fetch quote from API
 var getQuote = function() {
@@ -76,10 +57,18 @@ var getQuote = function() {
       fetch(quoteApiUrl).then(function(response) {
           if(response.ok) {
               response.json().then(function(data) {
-                  displayQuote(data);
-                  displayAuthor(data);
-                  saveQuote(quoteTypeInput, quoteApiUrl);
-                  displaySavedSearches();
+               //display fetched quote and quote author 
+                var randomQuote = data.content;
+                console.log(randomQuote); 
+                quoteSpace.textContent =  '"' + randomQuote + '"';
+                var quoteAuthor = data.author;
+                console.log(quoteAuthor);
+                authorSpace.textContent = quoteAuthor;
+                // save quote type, quote and author
+                var quoteWithAuthor = randomQuote + "/" + quoteAuthor;
+                console.log(quoteWithAuthor)
+                saveQuote(quoteTypeInput, quoteWithAuthor);
+                displaySavedSearches();
               })
           }
       })
@@ -105,7 +94,7 @@ var getData = function(event) {
 function saveFood(foodType, foodUrl) {
     foodObj = {
         type: foodType,
-        url: foodUrl
+        image: foodUrl
     };
     var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
     foodArr.push(foodObj);
@@ -116,7 +105,7 @@ function saveFood(foodType, foodUrl) {
 function saveQuote(quoteTopic, quoteUrl) {
     quoteObj = {
         type: quoteTopic,
-        url: quoteUrl
+        data: quoteUrl
     };
     var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
     quoteArr.push(quoteObj);
@@ -128,7 +117,6 @@ function saveQuote(quoteTopic, quoteUrl) {
 var displaySavedSearches = function() {
     var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
     var quoteArr = JSON.parse(localStorage.getItem("quoteArr")) || [];
-    console.log(quoteArr);
     priorSearchesEl.innerHTML = '';
     // loop through both arrays to create hyperlinks
      quoteArr.forEach((type1, index) => {
@@ -138,33 +126,28 @@ var displaySavedSearches = function() {
         var savedQuoteLink = document.createElement("a");
         savedQuoteLink.textContent = type1.type + "/" + type2.type;
         savedQuoteLink.classList = "links";
-        savedQuoteLink.setAttribute("href", "#")
+        savedQuoteLink.setAttribute("href", "#return")
+        savedQuoteLink.setAttribute("data-image", type2.image)
+        savedQuoteLink.setAttribute("data-quote", type1.data)
         savedQuote.appendChild(savedQuoteLink);
-<<<<<<< HEAD
-    };
-
-    var foodArr = JSON.parse(localStorage.getItem("foodArr")) || [];
-    for (let i = 0; i < foodArr.length; i++) {
-        savedQuoteLink.textContent += foodArr[i].type;
-    };
-
-    var priorSearch = function() {
-        console.log(event.target)
-        // quoteApiUrl = quoteArr[i].url;
-        // foodApiUrl = foodArr[i].url;
-        // getQuote(quoteApiUrl)
-        // getFoodImage(foodApiUrl)
-    }
-    savedQuote.addEventListener("click", priorSearch)
-=======
     });
-    // var priorSearch = function() {}
-    // savedQuote.addEventListener("click", priorSearch)
->>>>>>> develop
+    
 };
 
+  var priorSearch = function() {
+    console.log(event.target.getAttribute("data-image"));
+    console.log(event.target.getAttribute("data-quote"));
+    var image = event.target.getAttribute("data-image");
+        foodImageEl.setAttribute("src", image);
+    var quote = event.target.getAttribute("data-quote").split("/")[0];
+        quoteSpace.textContent =  '"' + quote + '"';
+    var author = event.target.getAttribute("data-quote").split("/")[1];
+    authorSpace.textContent = author;
+  };
+
 // event listeners
-quoteTypeEl.addEventListener("change", getQuoteType)
+priorSearchList.addEventListener("click", priorSearch);
+quoteTypeEl.addEventListener("change", getQuoteType);
 selectFoodEl.addEventListener("change", getFoodType);
 formEl.addEventListener("submit", getData);
 secondServingBtn.addEventListener("click", function() {
