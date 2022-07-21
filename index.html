@@ -41,6 +41,14 @@
 			<!-- header end -->
 			<!-- main body start -->
 			<main class="col s12">
+				<!--Error Modal-->
+				<div id="error-modal" class="none">
+					<div>
+						<span>MESS IN THE KITCHEN</span>
+						<p>Looks Like You Don't Have All Your Ingredients. Please Select Both a Quote & a Food Type!</p>
+					</div>
+					<button id="error-modal-btn" class="modal-close waves-effect waves-green btn-flat">Try Again</button>
+				</div>
 				<!-- form start -->
 				<form id="form-box" class="form transbox-footer">
 					<h3 class="main-title">What sounds good?</h3>
@@ -125,6 +133,8 @@
 				</form>
 				<!-- form end -->
 				<!-- return of search-->
+				<div id="return" class="row">
+					<div class="col s12">
 				<div class="row">
 					<div class="quote-pic col s12">
 						<div class="card">
@@ -136,25 +146,27 @@
 								/>
 							</div>
 							<!-- QUOTE -->
-							<div class="card-content col s12 m6">
-								<span id="quote" class="card-title"
-									>Words of Wisdom<br />
-									coming up!</span
-								>
-								<p id="quote-author"></p>
+								<div class="card-content col s12 m6">
+									<span id="quote" class="card-title"
+										>Words of Wisdom<br />
+										coming up!</span
+									>
+									<p id="quote-author"></p>
+								</div>
 							</div>
-						</div>
 					</div>
 				</div>
 				<!-- go back/try again button -->
-				<div class="row second-helping transbox-green">
-					<h4>Still hungry? How about a second serving?</h4>
-					<div>
-						<a class="more-button btn-floating btn-large">
-							<i class="material-icons">add</i>
-						</a>
+				
+					<div class="row col s12 second-helping transbox-green">
+						<h4>Still hungry? How about a second serving?</h4>
+						<div>
+							<a id="second-serving" class="more-button btn-floating btn-large">
+								<i class="material-icons">add</i>
+							</a>
+						</div>
 					</div>
-				</div>
+				
 			</main>
 			<!-- main body end -->
 			<!-- Footer -->
@@ -163,11 +175,11 @@
 					<div class="col l6 s12">
 						<h5>Order Again!</h5>
 					</div>
-					<div class="col l4 offset-l2 s12">
-						<ul id="prior-searches"></ul>
+					<div id="prior-search-list" class="col l4 offset-l2 s12">
+						<ul id="prior-searches">
+						</ul>
 					</div>
 				</div>
-
 				<div>
 					<div class="container footer-copyright transbox">
 						Contributions with ❤️ by: <br />
@@ -186,3 +198,4 @@
 		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
+

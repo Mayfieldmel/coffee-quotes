@@ -49,11 +49,6 @@ header {
 	float: inline-start;
 }
 
-.logo-2 {
-	float: inline-end;
-	width: 90px;
-}
-
 .icon-box {
 	width: 15%;
 }
@@ -89,7 +84,7 @@ h4 {
 }
 
 h5 {
-	font-size: 4rem;
+	font-size: 3.65rem;
 }
 
 .drop-title {
@@ -117,10 +112,6 @@ form {
 	font-family: "Caveat", cursive;
 	font-size: 2.5rem;
 	font-weight: bolder;
-}
-
-.options {
-	font-size: 2rem;
 }
 
 .submit-button {
@@ -167,21 +158,17 @@ form {
 .card-image {
 	border: solid 10px var(--tertiary-light);
 	background-color: var(--tertiary-light);
-	/* border-top-left-radius: 8px;
-	border-bottom-left-radius: 8px; */
 	object-fit: cover;
 }
 
 .card-content {
 	background-color: #ffffff;
-	/* border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px; */
 	flex: 1;
 }
 
 .options {
 	font-family: "Caveat", cursive;
-	font-size: 5rem;
+	font-size: 2.5rem;
 	color: var(--tertiary-dark);
 	background-color: var(--tertiary-light);
 }
@@ -225,7 +212,6 @@ form {
 	color: var(--tertiary-dark);
 	font-family: "Caveat", cursive;
 	font-size: 30px;
-	/* margin: 0px 40px; */
 	text-align: center;
 	border-radius: var(--border-radius);
 }
@@ -264,7 +250,7 @@ form {
 }
 
 .transbox-green {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	background-color: var(--tertiary-light);
 	border: 1px solid var(--tertiary-dark);
 	opacity: 0.9;
@@ -277,6 +263,29 @@ form {
 	border-color: var(--primary);
 	text-align: center;
 }
+
+.none {
+	display: none;
+}
+
+.modals {
+	display: block;
+	position: fixed;
+	font-size: 20px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: white;
+	text-align: center;
+	border: 10px;
+	border-radius: 1px solid black;
+	z-index: 7;
+}
+
+.modals span {
+	font-weight: 40px;
+}
+
 @media screen and (max-width: 1600px) {
 	h1 {
 		transform: none;
@@ -303,7 +312,7 @@ form {
 	}
 }
 
-/* On screens that are 6000px or less */
+/* On screens that are 600px or less */
 @media screen and (max-width: 600px) {
 	h1 {
 		font-size: 5rem;
@@ -351,8 +360,14 @@ form {
 		flex-direction: column;
 	}
 
+	.second-helping {
+		padding: 5px;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 	.transbox-green {
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 	}
 
 	.header {
