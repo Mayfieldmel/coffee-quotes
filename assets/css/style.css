@@ -280,11 +280,11 @@ form {
 	border: 10px;
 	border-radius: 1px solid black;
 	z-index: 7;
-}
+};
 
 .modals span {
 	font-weight: 40px;
-}
+};
 
 @media screen and (max-width: 1600px) {
 	h1 {
