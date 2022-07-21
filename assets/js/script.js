@@ -9,11 +9,11 @@ var quoteSpace = document.querySelector("#quote");
 var secondServingBtn = document.querySelector("#second-serving");
 var priorSearchesEl = document.querySelector("#prior-searches");
 var priorSearchList = document.querySelector("#prior-search-list");
-var foodTypeInput 
-var quoteTypeInput
-var foodObj = {}
-var quoteObj = {}
-    
+var foodTypeInput;
+var quoteTypeInput;
+var foodObj = {};
+var quoteObj = {};
+   
 // materialize says we must initialize the select element for the dropdown list. 
 document.addEventListener('DOMContentLoaded', function() {
 var elems = document.querySelectorAll('select');
@@ -47,7 +47,7 @@ var getQuoteType = function() {
     quoteTypeInput = event.target.value.trim();
 };
 
-//   fetch quote from API
+//   fetch quote from API & display on page
 var getQuote = function() {
     var quoteApiUrl = "https://api.quotable.io/random?tags=" + quoteTypeInput;
       fetch(quoteApiUrl).then(function(response) {
@@ -71,6 +71,7 @@ var getQuote = function() {
 // get food and quote data & display on page upon "submit"
 var getData = function(event) {
     event.preventDefault();
+    // error modal
     if(!foodTypeInput || !quoteTypeInput) {
         console.log("error");
         var modal = document.querySelector("#error-modal");
@@ -85,7 +86,7 @@ var getData = function(event) {
       };
     getFoodImage(getFoodType);
     getQuote(getQuoteType);
-}   
+};   
    
 // store food data in local storage
 function saveFood(foodType, foodUrl) {
@@ -146,8 +147,8 @@ selectFoodEl.addEventListener("change", getFoodType);
 formEl.addEventListener("submit", getData);
 secondServingBtn.addEventListener("click", function() {
     location.reload();
-})
+});
 
 // display saved searches on page load
-displaySavedSearches()
+displaySavedSearches();
 
