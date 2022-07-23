@@ -33,14 +33,14 @@ header {
 	display: flex;
 	margin-top: 30px;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	flex: auto;
 	flex-shrink: calc();
 }
 
 .header-title {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 .logo-1 {
@@ -280,11 +280,11 @@ form {
 	border: 10px;
 	border-radius: 1px solid black;
 	z-index: 7;
-};
+}
 
 .modals span {
 	font-weight: 40px;
-};
+}
 
 @media screen and (max-width: 1600px) {
 	h1 {
